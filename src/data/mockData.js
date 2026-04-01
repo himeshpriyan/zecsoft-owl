@@ -1,115 +1,115 @@
 // ============================================================
-// MOCK DATA - The Owl Creations
+// ELITE MOCK DATA - The Owl Creations (Cinematic Vision)
 // ============================================================
 
 export const services = [
   {
     id: 'media',
-    category: '🎥 Media Production',
-    color: '#F97316',
+    category: '🎥 Elite Cinematography',
+    color: '#FF6B00',
     items: [
-      { id: 'cinematography', title: 'Cinematography', icon: '🎬', benefit: 'Cinematic shots that tell your story', price: 5000 },
-      { id: 'direction', title: 'Direction', icon: '🎭', benefit: 'Creative direction for impactful visuals', price: 4000 },
-      { id: 'video-editing', title: 'Video Editing', icon: '✂️', benefit: 'Professional cuts with smooth transitions', price: 3000 },
-      { id: 'color-correction', title: 'Color Correction', icon: '🎨', benefit: 'Film-grade color grading and correction', price: 2000 },
-      { id: 'sfx', title: 'SFX & VFX', icon: '✨', benefit: 'Stunning visual effects that amaze', price: 6000 },
-      { id: 'product-shoot', title: 'Product Shoot', icon: '📷', benefit: 'High-quality visuals for your products', price: 3500 },
-      { id: 'short-film', title: 'Short Film Production', icon: '🎞️', benefit: 'Full production from script to screen', price: 15000 },
+      { id: 'cinematography', title: 'Elite Cinematography', icon: '🎬', benefit: 'RED Cinema shots with master-level framing', price: 75000 },
+      { id: 'direction', title: 'Creative Direction', icon: '🎭', benefit: 'Artistic vision and narrative architecture', price: 45000 },
+      { id: 'video-editing', title: 'Director\'s Cut Editing', icon: '✂️', benefit: 'Precision-timed, rhythmic visual storytelling', price: 35000 },
+      { id: 'color-correction', title: 'Film Grade Grading', icon: '🎨', benefit: 'Hollyword-standard color science & LUTs', price: 25000 },
+      { id: 'sfx', title: 'Atmospheric VFX', icon: '✨', benefit: 'Hyper-realistic visual enhancement & SFX', price: 65000 },
+      { id: 'product-shoot', title: 'Architectural Look', icon: '📷', benefit: 'Elite product lighting & macro-narratives', price: 38000 },
+      { id: 'short-film', title: 'Avenue Production', icon: '🎞️', benefit: 'Full-scale theatrical production & scripting', price: 155000 },
     ]
   },
   {
     id: 'marketing',
-    category: '📱 Digital Marketing',
+    category: '📱 Brand Architect',
     color: '#8B5CF6',
     items: [
-      { id: 'social-media', title: 'Social Media Management', icon: '📲', benefit: 'Grow your brand across all platforms', price: 8000 },
-      { id: 'content-creation', title: 'Content Creation', icon: '✍️', benefit: 'Engaging content that converts', price: 5000 },
-      { id: 'post-design', title: 'Post Design', icon: '🖼️', benefit: 'Eye-catching graphics for every platform', price: 3000 },
-      { id: 'promotion', title: 'Brand Promotion', icon: '📢', benefit: 'Strategic campaigns that deliver ROI', price: 7000 },
-      { id: 'ad-campaigns', title: 'Ad Campaigns', icon: '🚀', benefit: 'Targeted ads that maximize reach', price: 10000 },
+      { id: 'social-media', title: 'Ecosystem Management', icon: '📲', benefit: 'Viral growth architecture & community building', price: 85000 },
+      { id: 'content-creation', title: 'Premium Asset Suite', icon: '✍️', benefit: 'High-converting cinematic ad-creatives', price: 55000 },
+      { id: 'post-design', title: 'Elite Visual Design', icon: '🖼️', benefit: 'State-of-the-art graphics for global reach', price: 35000 },
+      { id: 'promotion', title: 'Strategic Inception', icon: '📢', benefit: 'High-ROI growth campaigns & data-science', price: 75000 },
+      { id: 'ad-campaigns', title: 'Precision Ad Suite', icon: '🚀', benefit: 'Hyper-targeted algorithmic ad strategy', price: 105000 },
     ]
   },
   {
     id: 'web',
-    category: '💻 Web & Design',
+    category: '💻 High-Performance Web',
     color: '#06B6D4',
     items: [
-      { id: 'website-dev', title: 'Website Development', icon: '🌐', benefit: 'Fast, modern websites that impress', price: 20000 },
-      { id: 'ui-ux', title: 'UI/UX Design', icon: '🎯', benefit: 'User-first designs that convert', price: 12000 },
-      { id: 'landing-page', title: 'Landing Page', icon: '📄', benefit: 'High-converting landing pages', price: 8000 },
-      { id: 'responsive-design', title: 'Responsive Design', icon: '📱', benefit: 'Pixel-perfect on every device', price: 6000 },
+      { id: 'website-dev', title: 'Flagship Platform Dev', icon: '🌐', benefit: '0.1s load speed & infinite scalability', price: 250000 },
+      { id: 'ui-ux', title: 'Behavioral Experience', icon: '🎯', benefit: 'Neuromorphic design that drives action', price: 125000 },
+      { id: 'landing-page', title: 'Conversion Masterclass', icon: '📄', benefit: 'Highest-converting single-page hubs', price: 85000 },
+      { id: 'responsive-design', title: 'Adaptive Luxury', icon: '📱', benefit: 'Perfectly optimized across all devices', price: 65000 },
     ]
   },
   {
     id: 'technical',
-    category: '🛠️ Technical',
+    category: '🛠️ AI & Automation',
     color: '#10B981',
     items: [
-      { id: 'automation', title: 'Automation Solutions', icon: '🤖', benefit: 'Streamline your workflow with AI', price: 15000 },
-      { id: 'app-dev', title: 'Equipment App Development', icon: '📱', benefit: 'Custom apps for your business needs', price: 25000 },
+      { id: 'automation', title: 'AI Workflow Engine', icon: '🤖', benefit: 'Intelligent automation for enterprise scale', price: 155000 },
+      { id: 'app-dev', title: 'Custom App Ecosystem', icon: '📱', benefit: 'Bespoke mobile/desktop internal systems', price: 355000 },
     ]
   },
   {
     id: 'interior',
-    category: '🏠 Interior Designing',
+    category: '🏠 Cinematic Interiors',
     color: '#F59E0B',
     items: [
-      { id: 'interior-design', title: 'Interior Design Consultation', icon: '🏡', benefit: 'Transform your space into a masterpiece', price: 10000 },
-      { id: 'interior-3d', title: '3D Interior Visualization', icon: '🎨', benefit: 'See your dream space before it\'s built', price: 8000 },
-      { id: 'interior-styling', title: 'Space Styling', icon: '🛋️', benefit: 'Professional styling for any room', price: 5000 },
+      { id: 'interior-design', title: 'Concept Architecture', icon: '🏡', benefit: 'Transforming spaces into living art pieces', price: 105000 },
+      { id: 'interior-3d', title: 'Hyper-Realistic 3D', icon: '🎨', benefit: 'V-Ray powered visual walk-throughs', price: 85000 },
+      { id: 'interior-styling', title: 'Curated Aesthetics', icon: '🛋️', benefit: 'Professional elite-level styling', price: 55000 },
     ]
   },
   {
     id: 'events',
-    category: '🎉 Event Coverage',
+    category: '🎉 Event Experiences',
     color: '#EC4899',
     items: [
-      { id: 'college-event', title: 'College Events', icon: '🎓', benefit: 'Capture every moment of campus life', price: 5000 },
-      { id: 'school-event', title: 'School Events', icon: '🏫', benefit: 'Preserve precious school memories', price: 4000 },
-      { id: 'wedding', title: 'Wedding Coverage', icon: '💍', benefit: 'Timeless wedding films and photos', price: 25000 },
-      { id: 'birthday', title: 'Birthday Parties', icon: '🎂', benefit: 'Fun, vibrant party coverage', price: 6000 },
-      { id: 'award', title: 'Award Functions', icon: '🏆', benefit: 'Professional corporate event coverage', price: 8000 },
+      { id: 'college-event', title: 'Festival Architect', icon: '🎓', benefit: 'Large-scale live production & experience', price: 155000 },
+      { id: 'school-event', title: 'Heritage Coverage', icon: '🏫', benefit: 'Preserving institutional legacy with class', price: 85000 },
+      { id: 'wedding', title: 'Eternal Collective', icon: '💍', benefit: 'Cinematic wedding masterpieces & memoirs', price: 355000 },
+      { id: 'birthday', title: 'Private Celebration', icon: '🎂', benefit: 'Elite coverage for high-profile birthdays', price: 75000 },
+      { id: 'award', title: 'Galactic Functions', icon: '🏆', benefit: 'Corporate award shows that command respect', price: 185000 },
     ]
   }
 ];
 
 export const portfolio = [
-  { id: 1, title: 'Wedding Cinematic Film', category: 'Wedding', thumbnail: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80', description: 'A beautiful cinematic wedding coverage for Mr. & Mrs. Sharma. Shot on RED Cinema cameras with drone aerials.', tags: ['Cinematography', 'Editing', 'Color Grading'] },
-  { id: 2, title: 'Tech Startup Brand Film', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80', description: 'A high-energy brand film for a Bangalore-based tech startup, showcasing their vision and team culture.', tags: ['Direction', 'Corporate', 'VFX'] },
-  { id: 3, title: 'Restaurant Product Shoot', category: 'Product', thumbnail: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80', description: 'Delicious food photography and video production for a premium restaurant chain in Chennai.', tags: ['Product Shoot', 'Color Correction'] },
-  { id: 4, title: 'NGO Awareness Campaign', category: 'Social', thumbnail: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80', description: 'Powerful social documentary created to raise awareness for an environmental NGO.', tags: ['Direction', 'Social Media', 'Editing'] },
-  { id: 5, title: 'College Annual Day Coverage', category: 'Event', thumbnail: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80', description: 'Complete coverage of a college annual day event with 500+ students and celebrity performers.', tags: ['Event Coverage', 'Photography'] },
-  { id: 6, title: 'Luxury E-Commerce Website', category: 'Web', thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80', description: 'Full-stack luxury e-commerce platform with custom UI/UX design and smooth animations.', tags: ['Web Development', 'UI/UX', 'Responsive'] },
-  { id: 7, title: 'Birthday Short Film', category: 'Event', thumbnail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', description: 'A cinematic short film surprise for a 25th birthday celebration, combining memories and drama.', tags: ['Short Film', 'Editing', 'SFX'] },
-  { id: 8, title: 'Award Function Live', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80', description: 'Multi-camera live coverage and post-production for an industry award function.', tags: ['Event', 'Multi-cam', 'Live'] },
+  { id: 1, title: 'The Eternal Wedding Film', category: 'Wedding', thumbnail: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80', description: 'A 45-minute cinematic odyssey for the Malhotra-Kapoor union. Shot on RED V-Raptor with anamorphic lenses.', tags: ['Anamorphic', 'RE Cinema', 'Master Grading'] },
+  { id: 2, title: 'X-Orbit Brand Genesis', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80', description: 'A high-octane brand introduction for India\'s newest unicorn venture, generating 10M+ collective reach.', tags: ['Direction', 'High-Octane', 'Impact'] },
+  { id: 3, title: 'Epicurean Product Shoot', category: 'Product', thumbnail: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80', description: 'Macro-cinematography for a Michelin-star restaurant chain. Capturing the soul of culinary craft.', tags: ['Macro-Cinema', 'Atmosphere'] },
+  { id: 4, title: 'Ocean Legacy Documentary', category: 'Social', thumbnail: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80', description: 'Award-winning preservation documentary highlighting the delicate balance of coastal ecosystems.', tags: ['Documentary', 'Storytelling', 'Impact'] },
+  { id: 5, title: 'Techno-Fest Experience', category: 'Event', thumbnail: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80', description: 'Multi-camera 4K live broadcast and after-movie for a 20,000+ attendee college festival.', tags: ['Live Broadcast', 'Festival'] },
+  { id: 6, title: 'Aura Luxury Interface', category: 'Web', thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', description: 'Hyper-responsive e-commerce platform for an international luxury brand with 3D product previews.', tags: ['Next.js', '3D Interactivity', 'UX'] },
+  { id: 7, title: 'Genesis Birthday Memoir', category: 'Event', thumbnail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', description: 'A personalized cinematic journey for a landmark 25th anniversary, blending live events with interviews.', tags: ['Memoir', 'Cinematography'] },
+  { id: 8, title: 'Industry Titan Awards', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80', description: 'Full broadcast-style production for the Annual Indian Industry Leadership Awards.', tags: ['Corporate', 'Broadcast'] },
 ];
 
 export const testimonials = [
-  { id: 1, name: 'Priya Rajan', role: 'Bride & Client', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Priya', rating: 5, review: 'The Owl Creations captured our wedding in the most magical way. Every frame tells a story. The team was professional, creative, and delivered beyond expectations!', location: 'Chennai' },
-  { id: 2, name: 'Arjun Mehta', role: 'CEO, TechNova', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arjun', rating: 5, review: 'Their brand film went viral on LinkedIn! The direction, editing, and storytelling were world-class. Best investment we made for our startup launch.', location: 'Bangalore' },
-  { id: 3, name: 'Sunita Krishnan', role: 'Restaurant Owner', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sunita', rating: 5, review: 'The product shoot transformed our menu. Sales increased by 40% after using their photos on our website and social media. Absolutely stunning work!', location: 'Coimbatore' },
-  { id: 4, name: 'Vikram Nair', role: 'College Event Head', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Vikram', rating: 5, review: 'They covered our entire college fest with incredible precision. The after-movie they produced was shared over 10,000 times. Phenomenal team!', location: 'Trichy' },
-  { id: 5, name: 'Deepika Shetty', role: 'Fashion Blogger', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Deepika', rating: 5, review: 'The website they built for my blog is gorgeous. Fast, responsive, and exactly my vision. The UI/UX team understood my brand perfectly!', location: 'Mumbai' },
+  { id: 1, name: 'Ananya Malhotra', role: 'Elite Client', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ananya', rating: 5, review: 'Absolutely redefined my perception of visual storytelling. The Eternal Wedding film is more than a video; it\'s a piece of art that breathes life into our every memory.', location: 'Delhi' },
+  { id: 2, name: 'Siddharth Mehta', role: 'CEO, X-Orbit Ventures', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Siddharth', rating: 5, review: 'The Brand Genesis film was a pivotal moment for our unicorn launch. The visual precision and narrative depth Owl Creations brought to the table was world-class.', location: 'Bangalore' },
+  { id: 3, name: 'Elena Rodriguez', role: 'Global Art Director', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Elena', rating: 5, review: 'Their architectural look for our latest product launch was phenomenal. The macro-cinematography was exquisite, capturing details we didn\'t even know existed.', location: 'London' },
+  { id: 4, name: 'Rohan Deshmukh', role: 'Festival Director', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rohan', rating: 5, review: 'Covering a 20k attendees festival with five 4K cameras and delivering a masterpiece after-movie in 48 hours is unheard of. A true technical powerhouse.', location: 'Mumbai' },
+  { id: 5, name: 'Isabella Chen', role: 'Luxury Brand Manager', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Isabella', rating: 5, review: 'The Aura Luxury Interface is perfect. It\'s fast, beautiful, and the neuromorphic UX has already increased our conversion rates by 65%. Highly recommended!', location: 'Singapore' },
 ];
 
 export const whyChooseUs = [
-  { icon: '🎬', title: 'Cinematic Quality', description: 'Film-grade production using the latest cameras, lenses, and post-production software.', highlight: 'RED & Sony Camera' },
-  { icon: '⚡', title: 'Fast Delivery', description: 'Industry-fastest turnaround. Most projects delivered within 48–72 hours.', highlight: '48-72 Hours' },
-  { icon: '💡', title: 'Creative Vision', description: 'Every project is treated as a unique canvas. We craft stories, not just content.', highlight: 'Story-First Approach' },
-  { icon: '💰', title: 'Affordable Excellence', description: 'Premium quality without the premium price tag. Plans for every budget.', highlight: 'Starting ₹2,999' },
-  { icon: '🏆', title: '100+ Projects Done', description: 'Proven track record across industries — weddings, corporates, social media & more.', highlight: '5-Star Rated' },
-  { icon: '🤝', title: 'Dedicated Support', description: 'Your project manager is available 24/7. We don\'t stop until you\'re thrilled.', highlight: '24/7 Available' },
+  { icon: '🎬', title: 'RED-Grade Optics', description: 'Cinematic-standard production using RED V-Raptor cameras and Arri Cooke anamorphic prime lenses.', highlight: 'Cinema-Standard' },
+  { icon: '⚡', title: 'Precision Delivery', description: 'Elite efficiency. Initial cinematic cuts delivered within a 48-hour premium window.', highlight: '48H Delivery' },
+  { icon: '💡', title: 'Narrative Architect', description: 'We don\'t follow trends; we create them. Every frame is a calculated move in your brand\'s story.', highlight: 'Creative Master-mind' },
+  { icon: '💰', title: 'Elite Investment', description: 'Exceptional ROI. Every rupee invested translates into high-impact visual value and conversion.', highlight: 'High-Value ROI' },
+  { icon: '🏆', title: '500+ Projects Done', description: 'A legacy of excellence working with global brands, celebrities, and visionaries worldwide.', highlight: 'Global Standard' },
+  { icon: '🤝', title: '24/7 Elite Concierge', description: 'Your vision is our priority. Around-the-clock dedicated creative support for all global time zones.', highlight: 'Total Dedication' },
 ];
 
 export const serviceCategories = {
-  Video: ['Cinematography', 'Direction', 'Video Editing', 'Color Correction', 'SFX & VFX', 'Short Film'],
-  Marketing: ['Social Media Management', 'Content Creation', 'Post Design', 'Ad Campaigns'],
-  Web: ['Website Development', 'UI/UX Design', 'Landing Page', 'Responsive Design'],
-  Event: ['Wedding Coverage', 'College Events', 'Birthday Parties', 'Award Functions'],
+  Video: ['Elite Cinematography', 'Creative Direction', 'Director\'s Cut Editing', 'Film Grade Grading', 'Atmospheric VFX', 'Avenue Production'],
+  Marketing: ['Ecosystem Management', 'Premium Asset Suite', 'Elite Visual Design', 'Strategic Inception', 'Precision Ad Suite'],
+  Web: ['Flagship Platform Dev', 'Behavioral Experience', 'Conversion Masterclass', 'Adaptive Luxury'],
+  Event: ['Festival Architect', 'Heritage Coverage', 'Eternal Collective', 'Private Celebration', 'Galactic Functions'],
 };
 
 export const budgetMultipliers = {
-  Low: 0.7,
+  Low: 0.8,
   Medium: 1.0,
-  Premium: 1.5,
+  Premium: 2.5,
 };

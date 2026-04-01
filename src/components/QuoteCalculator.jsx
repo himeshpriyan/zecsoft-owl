@@ -42,196 +42,240 @@ const QuoteCalculator = () => {
   };
 
   return (
-    <section id="quote" className="py-32 bg-black relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-500/5 rounded-full blur-[160px] pointer-events-none" />
-
+    <section id="quote" className="py-32 bg-[#020203] relative overflow-hidden">
+      {/* Cinematic Background Elements */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-orange-600/[0.03] rounded-full blur-[180px] pointer-events-none" />
+      
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-24 max-w-3xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center justify-center gap-2 mb-4"
+            className="flex items-center justify-center gap-3 mb-8"
           >
-            <Sparkles size={16} className="text-orange-500" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-400">Interactive Estimator</span>
+            <div className="w-8 h-[2px] bg-orange-500" />
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-500">Investment Engine</span>
+            <div className="w-8 h-[2px] bg-orange-500" />
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black text-white mb-6"
+            className="text-5xl md:text-7xl font-black text-white mb-10 leading-[0.95] tracking-tighter"
           >
-            Tailor Your <span className="text-orange-500">Experience</span>
+            Architect Your <span className="orange-text orange-glow">Investment.</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-gray-400 max-w-2xl mx-auto"
+            className="text-gray-500 text-lg md:text-xl font-medium leading-relaxed"
           >
-            Select your core service and requirements to receive an instant, 
-            transparent price estimation for your next project.
+            Select your core objective and precision-tune the parameters to generate 
+            an instant professional estimation for your cinematic vision.
           </motion.p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
-          {/* Controls */}
-          <div className="lg:col-span-8 space-y-8">
-            {/* Service Selection */}
-            <div className="glass p-8 rounded-3xl">
-              <h3 className="text-white font-bold mb-6 flex items-center gap-2 text-lg">
-                <span className="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-500 flex items-center justify-center font-bold text-sm">1</span>
-                Choose your service:
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+          {/* Controls - Left Side */}
+          <div className="lg:col-span-8 space-y-10">
+            {/* 1. Objective Selection */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="glass p-10 rounded-[3rem] border-white/5 shadow-2xl"
+            >
+              <h3 className="text-white font-black mb-10 flex items-center gap-4 text-xl uppercase tracking-widest">
+                <span className="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center font-black text-sm shadow-[0_10px_20px_rgba(255,107,0,0.3)]">1</span>
+                Primary Objective
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                 {services.map((s) => (
                   <button
                     key={s.id}
                     onClick={() => setSelectedService(s)}
-                    className={`flex flex-col items-center gap-4 p-5 rounded-2xl transition-all duration-300 border ${
+                    className={`flex flex-col items-center gap-5 p-6 rounded-3xl transition-all duration-500 border group ${
                       selectedService.id === s.id 
-                        ? 'bg-orange-500 border-orange-500 text-white shadow-lg shadow-orange-500/20' 
-                        : 'bg-white/5 border-white/5 text-gray-400 hover:border-white/10 hover:bg-white/10'
+                        ? 'bg-orange-500 border-orange-500 text-white shadow-[0_20px_40px_rgba(255,107,0,0.2)]' 
+                        : 'bg-white/[0.03] border-white/5 text-gray-400 theme-hover-glow'
                     }`}
                   >
-                    <s.icon size={24} />
-                    <span className="text-xs font-bold text-center">{s.label}</span>
+                    <s.icon size={28} className={selectedService.id === s.id ? 'white' : 'group-hover:text-orange-500 transition-colors'} />
+                    <span className="text-[10px] font-black tracking-widest uppercase text-center">{s.label}</span>
                   </button>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
-            {/* Duration Slider */}
-            <div className="glass p-8 rounded-3xl">
-              <h3 className="text-white font-bold mb-8 flex items-center gap-2 text-lg">
-                <span className="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-500 flex items-center justify-center font-bold text-sm">2</span>
-                Project duration (Days): <span className="text-orange-500 ml-auto bg-orange-500/10 px-4 py-1 rounded-lg text-2xl">{duration}</span>
-              </h3>
-              <input
-                type="range"
-                min="1"
-                max="14"
-                step="1"
-                value={duration}
-                onChange={(e) => setDuration(parseInt(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-orange-500"
-              />
-              <div className="flex justify-between mt-4 text-[10px] uppercase tracking-widest font-bold text-gray-600">
-                <span>Short Term</span>
-                <span>Production</span>
-                <span>Long Term</span>
+            {/* 2. Temporal Parameter (Slider) */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="glass p-10 rounded-[3rem] border-white/5 shadow-2xl"
+            >
+              <div className="flex items-center justify-between mb-10">
+                <h3 className="text-white font-black flex items-center gap-4 text-xl uppercase tracking-widest">
+                  <span className="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center font-black text-sm shadow-[0_10px_20px_rgba(255,107,0,0.3)]">2</span>
+                  Timeline Focus
+                </h3>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl font-black text-orange-500">{duration}</span>
+                  <span className="text-xs font-black text-gray-500 uppercase tracking-widest">Days</span>
+                </div>
               </div>
-            </div>
+              
+              <div className="relative pt-6 pb-2">
+                <input
+                  type="range"
+                  min="1"
+                  max="14"
+                  step="1"
+                  value={duration}
+                  onChange={(e) => setDuration(parseInt(e.target.value))}
+                  className="w-full h-[6px] bg-white/10 rounded-full appearance-none cursor-pointer accent-orange-500 slider-thumb-premium"
+                />
+                <div className="flex justify-between mt-8 text-[9px] uppercase tracking-[0.3em] font-black text-gray-600">
+                   {['Rapid Execute', 'Elite Focus', 'Architectural Depth'].map((label, i) => (
+                     <span key={i}>{label}</span>
+                   ))}
+                </div>
+              </div>
+            </motion.div>
 
-            {/* Addons Selection */}
-            <div className="glass p-8 rounded-3xl">
-              <h3 className="text-white font-bold mb-6 flex items-center gap-2 text-lg">
-                <span className="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-500 flex items-center justify-center font-bold text-sm">3</span>
-                Enhance your project:
+            {/* 3. Elite Enhancements (Addons) */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="glass p-10 rounded-[3rem] border-white/5 shadow-2xl"
+            >
+              <h3 className="text-white font-black mb-10 flex items-center gap-4 text-xl uppercase tracking-widest">
+                <span className="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center font-black text-sm shadow-[0_10px_20px_rgba(255,107,0,0.3)]">3</span>
+                Elite Enhancements
               </h3>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-5">
                 {addons.map((a) => (
                   <button
                     key={a.id}
                     onClick={() => toggleAddon(a.id)}
-                    className={`flex items-center justify-between p-4 rounded-xl border transition-all duration-300 ${
+                    className={`flex items-center justify-between p-6 rounded-2xl border transition-all duration-500 group ${
                       activeAddons.includes(a.id) 
-                        ? 'bg-orange-500/10 border-orange-500/50 text-white' 
-                        : 'bg-white/5 border-white/5 text-gray-400 hover:border-white/10'
+                        ? 'bg-orange-500/[0.08] border-orange-500/50 text-white shadow-lg shadow-orange-500/5' 
+                        : 'bg-white/5 border-white/5 text-gray-500 theme-hover-glow'
                     }`}
                   >
-                    <div className="flex items-center gap-3">
-                      <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${
-                        activeAddons.includes(a.id) ? 'bg-orange-500 border-orange-500' : 'border-white/20'
+                    <div className="flex items-center gap-5">
+                      <div className={`w-6 h-6 rounded-md border flex items-center justify-center transition-all duration-300 ${
+                        activeAddons.includes(a.id) ? 'bg-orange-500 border-orange-500 shadow-[0_0_15px_rgba(255,107,0,0.5)]' : 'border-white/10'
                       }`}>
-                        {activeAddons.includes(a.id) && <Check size={12} className="text-white" />}
+                        {activeAddons.includes(a.id) && <Check size={14} className="text-white" />}
                       </div>
-                      <span className="text-sm font-semibold">{a.label}</span>
+                      <span className="text-sm font-black uppercase tracking-widest">{a.label}</span>
                     </div>
-                    <span className={`text-xs ${activeAddons.includes(a.id) ? 'text-orange-400' : 'text-gray-600'}`}>
+                    <span className={`text-[11px] font-black ${activeAddons.includes(a.id) ? 'text-orange-500' : 'text-gray-600'}`}>
                       +₹{a.price.toLocaleString()}
                     </span>
                   </button>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Result Card */}
-          <div className="lg:col-span-4 sticky top-24">
-            <div className="glass p-8 rounded-3xl border-orange-500/30 overflow-hidden relative">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-[60px] rounded-full" />
+          {/* 4. Elite Estimation Result - Right Side Sticky */}
+          <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="glass p-10 rounded-[3rem] border-orange-500/30 overflow-hidden relative shadow-[0_50px_100px_-20px_rgba(255,107,0,0.15)]"
+            >
+              <div className="absolute top-[-100px] right-[-100px] w-64 h-64 bg-orange-500/10 blur-[80px] rounded-full pointer-events-none" />
               
-              <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest text-center">Estimation Summary</h4>
+              <div className="flex flex-col items-center mb-10 text-center">
+                <div className="w-12 h-[2px] bg-orange-500 mb-6" />
+                <h4 className="text-white font-black text-[10px] uppercase tracking-[0.4em]">Investment Matrix</h4>
+              </div>
               
-              <div className="space-y-4 mb-8">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-400">{selectedService.label}</span>
-                  <span className="text-white font-bold">₹{selectedService.base.toLocaleString()}</span>
+              <div className="space-y-6 mb-12">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Strategic Core</span>
+                  <span className="text-white font-black tracking-tight">{selectedService.label}</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-400">Duration ({duration} {duration === 1 ? 'Day' : 'Days'})</span>
-                  <span className="text-orange-400 font-bold">x {duration}</span>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Temporal Focus</span>
+                  <span className="text-orange-500 font-black tracking-tight">{duration} Days</span>
                 </div>
                 {activeAddons.length > 0 && (
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-400">Addons ({activeAddons.length})</span>
-                    <span className="text-white font-bold">Included</span>
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Enhancements</span>
+                    <span className="text-white font-black bg-white/5 py-1 px-3 rounded-full text-[10px] uppercase">{activeAddons.length} Applied</span>
                   </div>
                 )}
-                <div className="border-t border-white/10 pt-4" />
-                <div className="text-center">
-                  <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold mb-2">Estimated Investment Range</p>
-                  <div className="flex items-center justify-center gap-2">
+                <div className="pt-8 border-t border-white/5" />
+                <div className="text-center relative">
+                  <p className="text-[9px] text-gray-500 uppercase tracking-[0.3em] font-black mb-4">Estimated Premium Value</p>
+                  <div className="flex flex-col gap-2">
                     <AnimatePresence mode="wait">
                       <motion.span 
                         key={min}
-                        initial={{ opacity: 0, filter: 'blur(5px)' }}
-                        animate={{ opacity: 1, filter: 'blur(0px)' }}
-                        className="text-4xl md:text-5xl font-black text-white"
+                        initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
+                        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        className="text-5xl md:text-6xl font-[1000] text-white tracking-tighter"
                       >
-                        ₹{min.toLocaleString()}
+                         ₹{min.toLocaleString()}
                       </motion.span>
                     </AnimatePresence>
-                    <span className="text-orange-500 font-bold opacity-50">-</span>
+                    <span className="text-orange-500 text-xs font-black uppercase tracking-[0.3em] opacity-50">Estimated Maximum Range</span>
                     <AnimatePresence mode="wait">
                       <motion.span 
                         key={max}
-                        initial={{ opacity: 0, filter: 'blur(5px)' }}
-                        animate={{ opacity: 1, filter: 'blur(0px)' }}
-                        className="text-2xl font-bold text-gray-400"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="text-2xl font-black text-gray-600"
                       >
-                        ₹{max.toLocaleString()}
+                        Up to ₹{max.toLocaleString()}
                       </motion.span>
                     </AnimatePresence>
                   </div>
                 </div>
               </div>
 
-              <button 
+              <motion.button 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setQuoteModal(true)}
-                className="btn-premium w-full flex items-center justify-center gap-3 text-sm py-4"
+                className="btn-premium w-full flex items-center justify-center gap-4 text-[10px] py-6 shadow-2xl shadow-orange-500/30"
               >
-                Confirm Interest <ChevronRight size={18} />
-              </button>
+                PROCEED TO ALLOCATION <ChevronRight size={18} />
+              </motion.button>
 
-              <p className="text-[9px] text-gray-600 text-center mt-6 uppercase tracking-wider font-bold leading-relaxed px-4">
-                This is an automated estimate. Final pricing is confirmed after consultation.
+              <p className="text-[8px] text-gray-700 text-center mt-8 uppercase tracking-[0.2em] font-black leading-relaxed px-6">
+                Algorithmic projection based on current elite market standards.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Expert Help Card */}
-            <div className="mt-8 p-6 rounded-3xl bg-orange-500/5 border border-orange-500/10 flex items-center gap-4 group hover:bg-orange-500/10 transition-colors cursor-pointer">
-              <div className="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white shadow-lg shadow-orange-500/20">
-                <Sparkles size={20} />
+            {/* AI Advisor - Interaction */}
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.3 }}
+               className="mt-8 p-8 rounded-[2.5rem] bg-orange-600/[0.03] border border-orange-500/10 flex items-center gap-6 group hover:bg-orange-500/5 transition-all cursor-pointer relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[1.5s]" />
+              <div className="w-14 h-14 rounded-2xl bg-orange-500 flex items-center justify-center text-white shadow-[0_15px_30px_rgba(255,107,0,0.3)] z-10">
+                <Sparkles size={24} />
               </div>
-              <div>
-                <p className="text-xs font-bold text-orange-400 uppercase tracking-wider">Need assistance?</p>
-                <p className="text-sm text-white font-medium group-hover:text-orange-500 transition-colors">Chat with our AI Owl →</p>
+              <div className="relative z-10">
+                <p className="text-[10px] font-black text-orange-500 uppercase tracking-widest mb-1 italic">Professional Advisor</p>
+                <p className="text-sm text-white font-black tracking-tight group-hover:text-orange-500 transition-colors">Consult with Elite Owl AI →</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
