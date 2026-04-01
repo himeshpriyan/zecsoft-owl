@@ -93,15 +93,16 @@ const Chatbot = () => {
       <motion.button
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 1.1, y: -5 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-32 right-6 w-14 h-14 rounded-full bg-orange-500 text-white flex items-center justify-center shadow-lg z-[1001] glow-orange"
+        className="fixed bottom-28 right-6 w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 text-orange-500 flex items-center justify-center shadow-2xl z-[1001] group overflow-hidden"
       >
-        {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        {isOpen ? <X size={24} /> : <MessageCircle size={24} className="group-hover:scale-110 transition-transform" />}
         {!isOpen && (
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center">
-            <span className="w-2 h-2 bg-orange-500 rounded-full animate-ping"></span>
+          <span className="absolute top-2 right-2 w-2 h-2 bg-orange-500 rounded-full">
+            <span className="absolute inset-0 bg-orange-500 rounded-full animate-ping"></span>
           </span>
         )}
       </motion.button>

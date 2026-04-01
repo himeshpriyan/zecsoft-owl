@@ -104,62 +104,55 @@ const PortfolioModule = () => {
                 </div>
 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 z-10 p-8 flex flex-col justify-end">
-                  <div className="flex items-start justify-between mb-4">
+                <div className="absolute inset-x-0 bottom-0 z-10 p-10 flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent">
+                  <div className="flex items-start justify-between mb-5">
                     <motion.div 
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      className="px-3 py-1 rounded-full bg-orange-500/20 border border-orange-500/30 backdrop-blur-md"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="px-4 py-1.5 rounded-xl bg-orange-500/10 border border-orange-500/20 backdrop-blur-xl"
                     >
-                      <span className="text-[10px] font-bold text-orange-400 uppercase tracking-[0.1em]">{project.category}</span>
+                      <span className="text-[9px] font-black text-orange-500 uppercase tracking-[0.2em]">{project.category}</span>
                     </motion.div>
                     
                     <motion.div
                       animate={{ 
-                        scale: hoveredId === project.id ? 1 : 0.8,
-                        opacity: hoveredId === project.id ? 1 : 0 
+                        scale: hoveredId === project.id ? 1.1 : 1,
+                        opacity: hoveredId === project.id ? 1 : 0.8 
                       }}
-                      className="w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center text-white"
+                      className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center text-white shadow-2xl transition-all duration-500 group-hover:bg-orange-500 group-hover:border-orange-500"
                     >
-                      <Play size={18} fill="currentColor" />
+                      <Play size={20} fill="currentColor" />
                     </motion.div>
                   </div>
 
-                  <h3 className="text-2xl font-black text-white mb-2 group-hover:text-orange-500 transition-colors">
+                  <h3 className="text-3xl font-black text-white mb-3 group-hover:text-orange-500 transition-all duration-500 tracking-tight">
                     {project.title}
                   </h3>
                   
-                  <p className="text-sm text-gray-400 line-clamp-2 mb-6 group-hover:text-gray-300 transition-colors">
+                  <p className="text-sm text-gray-400 line-clamp-2 mb-8 group-hover:text-gray-200 transition-colors opacity-70">
                     {project.description}
                   </p>
 
-                  <div className="flex items-center gap-4">
-                    <button className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-orange-500 hover:text-white transition-colors">
-                      Explore Case <ArrowRight size={14} />
+                  <div className="flex items-center gap-6">
+                    <button className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.25em] text-white hover:text-orange-500 transition-all">
+                      View Masterpiece <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </button>
-                    <div className="h-px flex-1 bg-white/10 group-hover:bg-orange-500/30 transition-colors" />
+                    <div className="h-px flex-1 bg-white/5 group-hover:bg-orange-500/20 transition-all duration-700" />
                   </div>
                 </div>
 
-                {/* Hover Play State Overlay */}
+                {/* Hover Reveal State Overlay */}
                 <AnimatePresence>
                   {hoveredId === project.id && (
                     <motion.div 
-                      className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+                      className="absolute inset-0 z-20 pointer-events-none overflow-hidden"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                     >
-                      <div className="bg-black/20 backdrop-blur-[2px] w-full h-full flex items-center justify-center">
-                         <div className="flex flex-col items-center gap-3">
-                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 animate-pulse">Preview Loading</span>
-                            <div className="flex gap-1">
-                                <div className="w-1 h-1 bg-orange-500 rounded-full animate-bounce"></div>
-                                <div className="w-1 h-1 bg-orange-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-                                <div className="w-1 h-1 bg-orange-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-                            </div>
-                         </div>
-                      </div>
+                      <div className="absolute inset-0 bg-orange-500/5 mix-blend-overlay" />
+                      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
+                      <div className="absolute bottom-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
                     </motion.div>
                   )}
                 </AnimatePresence>

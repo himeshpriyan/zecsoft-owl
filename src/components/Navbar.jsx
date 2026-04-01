@@ -34,54 +34,54 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 px-6 py-4 ${
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-700 px-6 py-6 ${
         isScrolled ? 'md:py-4' : 'md:py-8'
       }`}
     >
-      <div className={`container mx-auto px-6 py-3 rounded-2xl transition-all duration-500 flex items-center justify-between ${
-        isScrolled ? 'glass border-orange-500/10 shadow-lg shadow-orange-500/5' : 'bg-transparent'
+      <div className={`container mx-auto px-8 py-4 rounded-[2rem] transition-all duration-700 flex items-center justify-between ${
+        isScrolled ? 'glass border-white/10 shadow-2xl' : 'bg-transparent'
       }`}>
         {/* Logo */}
         <div 
           onClick={() => scrollTo('#hero')}
-          className="flex items-center gap-3 cursor-pointer group"
+          className="flex items-center gap-4 cursor-pointer group"
         >
-          <div className="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center text-white shadow-lg shadow-orange-500/20 group-hover:rotate-12 transition-transform">
-            <Sparkles size={18} />
+          <div className="w-12 h-12 rounded-2xl bg-orange-500 flex items-center justify-center text-white shadow-2xl shadow-orange-500/40 group-hover:rotate-[15deg] group-hover:scale-110 transition-all duration-500">
+            <Sparkles size={22} />
           </div>
           <div className="hidden sm:block">
-            <h1 className="text-white font-black text-lg leading-none tracking-tight">THE OWL</h1>
-            <p className="text-orange-500 text-[10px] uppercase font-bold tracking-[0.2em] mt-1">Creations</p>
+            <h1 className="text-white font-black text-xl leading-none tracking-tighter">THE OWL</h1>
+            <p className="text-orange-500 text-[10px] uppercase font-black tracking-[0.4em] mt-1.5 opacity-80">Creations</p>
           </div>
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => scrollTo(link.href)}
-              className="relative text-xs uppercase tracking-widest font-bold text-gray-400 hover:text-white transition-colors py-2 group"
+              className="relative text-[10px] uppercase tracking-[0.2em] font-black text-gray-400 hover:text-white transition-all py-2 group"
             >
               {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-orange-500 transition-all duration-500 group-hover:w-full" />
             </button>
           ))}
           
           <button 
             onClick={() => setQuoteModal(true)}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-orange-500 text-white text-[10px] font-black uppercase tracking-widest hover:bg-orange-600 transition-all shadow-lg shadow-orange-500/20"
+            className="flex items-center gap-3 px-8 py-3 rounded-xl bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] hover:bg-orange-500 hover:text-white transition-all shadow-xl hover:scale-105 active:scale-95"
           >
-            Get Expert Estimate <ArrowUpRight size={14} />
+            Get Expert Estimate <ArrowUpRight size={16} />
           </button>
         </div>
 
         {/* Mobile Toggle */}
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors"
+          className="md:hidden text-white w-12 h-12 flex items-center justify-center hover:bg-white/5 rounded-xl transition-all"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
@@ -89,28 +89,36 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-0 top-24 mx-6 p-8 glass rounded-3xl z-[999] border-orange-500/20 shadow-2xl md:hidden"
+            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+            className="fixed inset-x-0 top-28 mx-6 p-10 glass rounded-[3rem] z-[999] border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] md:hidden overflow-hidden"
           >
-            <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <button
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent pointer-events-none" />
+            <div className="flex flex-col gap-8 relative z-10">
+              {navLinks.map((link, i) => (
+                <motion.button
                   key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
                   onClick={() => scrollTo(link.href)}
-                  className="text-lg font-black text-white hover:text-orange-500 text-left transition-colors uppercase tracking-widest"
+                  className="text-3xl font-black text-white hover:text-orange-500 text-left transition-colors uppercase tracking-tight"
                 >
                   {link.name}
-                </button>
+                </motion.button>
               ))}
-              <div className="h-px bg-white/10 my-2" />
-              <button 
+              <div className="h-px bg-white/5 my-4" />
+              <motion.button 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
                 onClick={() => { setIsMobileMenuOpen(false); setQuoteModal(true); }}
-                className="btn-premium w-full flex items-center justify-center gap-3 text-sm"
+                className="btn-premium w-full flex items-center justify-center gap-4 text-sm py-5"
               >
-                Get Expert Estimate <ArrowUpRight size={18} />
-              </button>
+                Get Expert Estimate <ArrowUpRight size={22} />
+              </motion.button>
             </div>
           </motion.div>
         )}

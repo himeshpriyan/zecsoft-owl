@@ -5,22 +5,29 @@
 @tailwind utilities;
 
 :root {
-  --orange: #F97316;
-  --orange-dark: #EA580C;
-  --orange-light: #FB923C;
-  --orange-glow: rgba(249, 115, 22, 0.4);
-  --orange-glow-light: rgba(249, 115, 22, 0.15);
-  --black: #050505;
-  --black-100: #0A0A0A;
-  --black-200: #111111;
-  --black-300: #1A1A1A;
-  --black-400: #222222;
-  --white: #FFFFFF;
-  --gray: #9CA3AF;
-  --gray-light: #D1D5DB;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-hover: rgba(255, 255, 255, 0.06);
+  --orange: #FF6B00;
+  --orange-dark: #cc5500;
+  --orange-light: #ff8533;
+  --orange-glow: rgba(255, 107, 0, 0.45);
+  --orange-glow-light: rgba(255, 107, 0, 0.2);
+  --black: #020203;
+  --black-100: #08080a;
+  --black-200: #0e0e12;
+  --black-300: #14141a;
+  --black-400: #1a1a22;
+  --white: #ffffff;
+  --gray: #828291;
+  --gray-light: #c1c1ca;
+  --glass-bg: rgba(255, 255, 255, 0.035);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-hover: rgba(255, 107, 0, 0.05);
+  --selection-bg: var(--orange);
+  --selection-text: var(--white);
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
 
 * {
@@ -28,6 +35,11 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  cursor: default;
+}
+
+button, a {
+  cursor: pointer;
 }
 
 body {
@@ -35,6 +47,7 @@ body {
   background-color: var(--black);
   color: var(--white);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,110 +55,125 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #111;
+  background: #020203;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--orange);
-  border-radius: 3px;
+  background: linear-gradient(to bottom, var(--orange), #cc5500);
+  border-radius: 10px;
 }
 
 .orange-gradient {
-  background: linear-gradient(135deg, #F97316, #EA580C);
+  background: linear-gradient(135deg, #FF6B00, #cc5500);
 }
 
 .section-heading {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.1;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
 
 .orange-text {
-  color: var(--orange);
+  background: linear-gradient(135deg, #FF6B00, #ff8533);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .orange-glow {
-  text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+  text-shadow: 0 0 30px var(--orange-glow);
 }
 
 .card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(249, 115, 22, 0.2);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 40px 80px -20px rgba(255, 107, 0, 0.25);
 }
 
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7);
 }
 
 .glass-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .glass-hover:hover {
   background: var(--glass-hover);
-  border-color: rgba(249, 115, 22, 0.3);
-  box-shadow: 0 20px 40px -15px rgba(249, 115, 22, 0.15);
-  transform: translateY(-4px);
+  border-color: rgba(255, 107, 0, 0.4);
+  box-shadow: 0 30px 60px -15px rgba(255, 107, 0, 0.2);
 }
 
 .glow-orange {
-  box-shadow: 0 0 20px 0 var(--orange-glow-light);
+  box-shadow: 0 0 40px 0 var(--orange-glow-light);
 }
 
 .text-glow {
-  text-shadow: 0 0 15px var(--orange-glow);
+  text-shadow: 0 0 20px var(--orange-glow);
 }
 
 .btn-premium {
-  background: linear-gradient(135deg, #F97316, #EA580C);
+  background: linear-gradient(135deg, #FF6B00, #cc5500);
   color: white;
-  padding: 0.875rem 2.5rem;
-  border-radius: 9999px;
-  font-weight: 700;
+  padding: 1.125rem 3rem;
+  border-radius: 20px;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   border: none;
-  box-shadow: 0 10px 20px -5px var(--orange-glow);
+  box-shadow: 0 15px 30px -5px var(--orange-glow);
+  position: relative;
+  overflow: hidden;
+}
+.btn-premium::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.6s ease;
 }
 .btn-premium:hover {
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 15px 30px -5px var(--orange-glow);
-  background: linear-gradient(135deg, #FB923C, #F97316);
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 25px 50px -10px var(--orange-glow);
 }
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.5);
-  background: linear-gradient(135deg, #FB923C, #F97316);
+.btn-premium:hover::after {
+  transform: scale(1);
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--orange);
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 1rem;
-  border: 2px solid var(--orange);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 .btn-outline:hover {
-  background: var(--orange);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
 }
 
 .service-card {
