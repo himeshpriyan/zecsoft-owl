@@ -36,6 +36,8 @@ const budgets = [
 
 export default function SmartServiceSelector() {
   const [step, setStep] = useState(1);
+  const [maxStepReached, setMaxStepReached] = useState(1);
+  const [showPulse, setShowPulse] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [selections, setSelections] = useState({ category: null, subService: null, budget: null });
   const [result, setResult] = useState(null);
@@ -48,7 +50,9 @@ export default function SmartServiceSelector() {
     // Simulate AI Processing
     setTimeout(() => {
       setIsProcessing(false);
-      setStep(prev => prev + 1);
+      const nextStep = step + 1;
+      setStep(nextStep);
+      if (nextStep > maxStepReached) setMaxStepReached(nextStep);
       
       if (key === 'budget') {
         const price = Math.round(selections.subService.price * budgetMultipliers[value]);
@@ -57,8 +61,19 @@ export default function SmartServiceSelector() {
     }, 1200);
   };
 
+  const handleStepClick = (s) => {
+    if (s <= maxStepReached) {
+      setStep(s);
+    } else {
+      // Trigger guidance pulse
+      setShowPulse(true);
+      setTimeout(() => setShowPulse(false), 1500);
+    }
+  };
+
   const reset = () => {
     setStep(1);
+    setMaxStepReached(1);
     setIsProcessing(false);
     setSelections({ category: null, subService: null, budget: null });
     setResult(null);
@@ -117,25 +132,29 @@ export default function SmartServiceSelector() {
               {currentSteps.map((s, i) => (
                 <button 
                   key={i} 
-                  onClick={() => step > i + 1 && setStep(i + 1)}
-                  disabled={step === i + 1}
-                  className={`relative z-10 flex flex-col items-center gap-4 transition-all duration-500 group ${step > i + 1 ? 'cursor-pointer' : 'cursor-default'}`}
+                  onClick={() => handleStepClick(i + 1)}
+                  className={`relative z-10 flex flex-col items-center gap-4 transition-all duration-500 group ${i + 1 <= maxStepReached ? 'cursor-pointer' : 'cursor-default'}`}
                 >
                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-sm font-black border transition-all duration-700 ${
                       step > i + 1 ? 'bg-orange-500 border-orange-500 text-white shadow-[0_10px_30px_rgba(255,107,0,0.3)]' :
                       step === i + 1 ? 'bg-[#020203] border-orange-500 text-orange-500 shadow-[0_0_20px_rgba(255,107,0,0.2)]' :
-                      'bg-[#020203] border-white/10 text-gray-800'
-                   } ${step > i + 1 ? 'group-hover:scale-110' : ''}`}>
+                      i + 1 <= maxStepReached ? 'bg-[#020203] border-orange-500/50 text-orange-500/50' : 'bg-[#020203] border-white/10 text-gray-800'
+                   } ${i + 1 <= maxStepReached ? 'group-hover:scale-110' : ''}`}>
                       {step > i + 1 ? <Check size={24} strokeWidth={3} /> : i + 1}
                    </div>
                    <div className="text-center">
                      <p className={`text-[10px] uppercase tracking-[0.3em] font-black leading-none mb-1 transition-colors ${
-                        step >= i + 1 ? 'text-white' : 'text-gray-800'
+                        step >= i + 1 || i + 1 <= maxStepReached ? 'text-white' : 'text-gray-800'
                      }`}>{s}</p>
                      {step === i + 1 && (
                        <motion.div layoutId="stepIndicator" className="h-[2px] bg-orange-500 w-full mt-2" />
                      )}
                    </div>
+                   {i + 1 > maxStepReached && (
+                     <div className="absolute -top-2 -right-2">
+                        <div className="w-4 h-4 rounded-full bg-black border border-white/10 flex items-center justify-center text-[10px] text-gray-700">🔒</div>
+                     </div>
+                   )}
                 </button>
               ))}
            </div>
@@ -145,6 +164,20 @@ export default function SmartServiceSelector() {
               {/* Background Glows for the Container */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/[0.02] blur-[100px] rounded-full" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/[0.02] blur-[100px] rounded-full" />
+
+              {/* Locked Interaction Toast */}
+              <AnimatePresence>
+                {showPulse && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20, x: '-50%' }}
+                    animate={{ opacity: 1, y: 0, x: '-50%' }}
+                    exit={{ opacity: 0, y: 20, x: '-50%' }}
+                    className="absolute top-10 left-1/2 z-50 px-6 py-3 bg-orange-500 rounded-full text-white text-[10px] font-black uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(255,107,0,0.4)] flex items-center gap-3"
+                  >
+                    <Sparkles size={14} /> Please select an option to move forward
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               <AnimatePresence mode="wait">
                  {isProcessing ? (
@@ -180,7 +213,12 @@ export default function SmartServiceSelector() {
                         <motion.div 
                           key="step1"
                           initial={{ opacity: 0, x: 50, filter: 'blur(20px)' }}
-                          animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                          animate={{ 
+                            opacity: 1, 
+                            x: 0, 
+                            filter: 'blur(0px)',
+                            scale: showPulse ? [1, 1.02, 1] : 1
+                          }}
                           exit={{ opacity: 0, x: -50, filter: 'blur(20px)' }}
                           transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
                         >
@@ -190,7 +228,7 @@ export default function SmartServiceSelector() {
                              </h3>
                              <p className="text-gray-500 text-[11px] uppercase tracking-[0.3em] font-black">Define the core objective of your masterpiece</p>
                            </div>
-                           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                           <div className={`grid grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500 ${showPulse ? 'scale-[1.02]' : ''}`}>
                               {Object.keys(serviceCategories).map((cat) => (
                                  <motion.button
                                     key={cat}
