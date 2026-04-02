@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, ArrowRight, Sparkles, Send } from 'lucide-react';
+import { Zap, ArrowRight, Sparkles } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 const LeadMagnet = () => {
@@ -18,14 +18,14 @@ const LeadMagnet = () => {
              transition={{ duration: 10, repeat: Infinity }}
           />
 
-          <div className="md:w-2/3">
+          <div className="md:w-3/4">
              <motion.div 
                initial={{ opacity: 0, x: -20 }}
                whileInView={{ opacity: 1, x: 0 }}
                className="flex items-center gap-2 mb-6"
              >
                <Zap size={16} className="text-orange-500 fill-orange-500" />
-               <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-400">Limited Opportunity</span>
+               <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-400">Let's Get Started</span>
              </motion.div>
              
              <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
@@ -34,8 +34,8 @@ const LeadMagnet = () => {
              </h2>
              
              <p className="text-gray-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-medium">
-                Join 500+ elite brands who trust The Owl Creations for 
-                cinematic excellence. Get a free consultation today.
+                Ready to bring your next big idea to life? Reach out to us and 
+                get a free consultation today.
              </p>
 
              <motion.div 
@@ -47,24 +47,13 @@ const LeadMagnet = () => {
                    onClick={() => setQuoteModal(true)}
                    className="btn-premium flex items-center gap-3"
                 >
-                   Secure My Strategy <ArrowRight size={20} />
+                   Request a Quote <ArrowRight size={20} />
                 </button>
                 <div className="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase tracking-widest px-6 py-4">
                    <Sparkles size={14} className="text-orange-500" />
-                   Only 3 slots left for April
+                   Fast & Reliable Delivery
                 </div>
              </motion.div>
-          </div>
-
-          <div className="relative md:w-1/3">
-             <div className="w-56 h-56 md:w-80 md:h-80 rounded-full border border-orange-500/20 flex items-center justify-center relative p-8">
-                <div className="absolute inset-0 border border-orange-500/10 rounded-full animate-ping opacity-20" />
-                <div className="w-full h-full rounded-full bg-orange-500/5 backdrop-blur-3xl flex flex-col items-center justify-center text-center p-6 border border-white/5">
-                   <Send size={40} className="text-orange-500 mb-4 animate-bounce" />
-                   <p className="text-white font-black text-xl mb-1">Instant Access</p>
-                   <p className="text-[10px] text-gray-500 uppercase font-black tracking-widest">Get Project Roadmap</p>
-                </div>
-             </div>
           </div>
         </div>
       </div>
