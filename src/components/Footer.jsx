@@ -1,11 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone, Sparkles, ArrowRight, Instagram, Youtube, Twitter } from 'lucide-react';
 
 const footerLinks = {
-  'Signature Services': ['Elite Cinematography', 'Flagship Platform Dev', 'Global Strategic Scale', 'Artistic Event Architecture', 'World-Class Product Vision'],
-  'The Owl': ['Our Genesis', 'The Portfolio', 'Client Voice', 'Investment Matrix', 'Latest Vision'],
-  'Operations': ['Privacy Protocol', 'Terms of Engagement', 'Cookie Policy', 'Global Sitemap']
+  'Signature Services': [
+    { name: 'Elite Cinematography', href: '/services' },
+    { name: 'Flagship Platform Dev', href: '/services' },
+    { name: 'Global Strategic Scale', href: '/services' },
+    { name: 'Artistic Event Architecture', href: '/services' },
+    { name: 'World-Class Product Vision', href: '/services' }
+  ],
+  'The Owl': [
+    { name: 'Our Genesis', href: '/contact' },
+    { name: 'The Portfolio', href: '/portfolio' },
+    { name: 'Client Voice', href: '/testimonials' },
+    { name: 'Investment Matrix', href: '/quote' },
+    { name: 'Latest Vision', href: '/' }
+  ],
+  'Operations': [
+    { name: 'Privacy Protocol', href: '/' },
+    { name: 'Terms of Engagement', href: '/' },
+    { name: 'Cookie Policy', href: '/' },
+    { name: 'Global Sitemap', href: '/' }
+  ]
 };
 
 const socialLinks = [
@@ -15,11 +33,6 @@ const socialLinks = [
 ];
 
 const Footer = () => {
-  const scrollTo = (id) => {
-     const el = document.querySelector(id);
-     if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <footer className="bg-[#020203] border-t border-white/5 pt-32 pb-16 overflow-hidden relative">
       {/* Cinematic Background Decor */}
@@ -65,14 +78,14 @@ const Footer = () => {
                 <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white mb-10 pb-4 border-b border-orange-500/20 inline-block">{title}</h4>
                 <ul className="space-y-5">
                   {links.map((link) => (
-                    <li key={link}>
-                      <button 
-                        onClick={() => scrollTo('#services')}
+                    <li key={link.name}>
+                      <Link 
+                        to={link.href}
                         className="text-gray-500 hover:text-orange-500 text-sm font-black uppercase tracking-widest transition-all flex items-center gap-3 group text-left"
                       >
                         <ArrowRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all text-orange-500" />
-                        {link}
-                      </button>
+                        {link.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>

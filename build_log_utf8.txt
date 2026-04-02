@@ -1,0 +1,46 @@
+﻿
+> event@0.0.0 build
+> vite build
+
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 2007 modules transformed.
+npm : [31mx[39m Build failed in 4.73s
+At line:1 char:1
++ npm run build > build_log.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([31mx[39m Build failed in 4.73s:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[31merror during build:
+[31msrc/components/ServicesModule.jsx (3:9): "services" is not exported by "src/data/mockData.js", imported by 
+"src/components/ServicesModule.jsx".[31m
+file: [36mC:/Users/Himeshpriyan/Documents/zecsoft/event/src/components/ServicesModule.jsx:3:9[31m
+[33m
+1: import React, { useState } from 'react';
+2: import { motion, AnimatePresence } from 'framer-motion';
+3: import { services } from '../data/mockData';
+            ^
+4: import { useApp } from '../context/AppContext';
+5: import { Sparkles, ArrowRight, Check, Zap, Cpu, Globe, Target, Terminal } from 'lucide-react';
+[31m
+    at getRollupError 
+(file:///C:/Users/Himeshpriyan/Documents/zecsoft/event/node_modules/rollup/dist/es/shared/parseAst.js:406:41)
+    at error 
+(file:///C:/Users/Himeshpriyan/Documents/zecsoft/event/node_modules/rollup/dist/es/shared/parseAst.js:402:42)
+    at Module.error 
+(file:///C:/Users/Himeshpriyan/Documents/zecsoft/event/node_modules/rollup/dist/es/shared/node-entry.js:17380:16)
+    at Module.traceVariable 
+(file:///C:/Users/Himeshpriyan/Documents/zecsoft/event/node_modules/rollup/dist/es/shared/node-entry.js:17813:29)
+    at ModuleScope.findVariable 
+(file:///C:/Users/Himeshpriyan/Documents/zecsoft/event/node_modules/rollup/dist/es/shared/node-entry.js:15403:39)
+    at FunctionScope.findVariable 
+(file:///C:/Users/Himeshpriyan/Documents/zecsoft/event/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at FunctionBodyScope.findVariable 
+(file:///C:/Users/Himeshpriyan/Documents/zecsoft/event/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at MemberExpression.bind 
+(file:///C:/Users/Himeshpriyan/Documents/zecsoft/event/node_modules/rollup/dist/es/shared/node-entry.js:7395:49)
+    at CallExpression.bind 
+(file:///C:/Users/Himeshpriyan/Documents/zecsoft/event/node_modules/rollup/dist/es/shared/node-entry.js:2828:28)
+    at CallExpression.bind 
+(file:///C:/Users/Himeshpriyan/Documents/zecsoft/event/node_modules/rollup/dist/es/shared/node-entry.js:12512:15)[39m

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 
@@ -7,6 +8,8 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { setQuoteModal } = useApp();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,20 +20,12 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Quote', href: '#quote' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Services', href: '/services' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Quote', href: '/quote' },
+    { name: 'Testimonials', href: '/testimonials' },
+    { name: 'Contact', href: '/contact' },
   ];
-
-  const scrollTo = (id) => {
-    setIsMobileMenuOpen(false);
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
   return (
     <nav 
@@ -42,8 +37,8 @@ const Navbar = () => {
         isScrolled ? 'glass border-white/10 shadow-2xl' : 'bg-transparent'
       }`}>
         {/* Logo */}
-        <div 
-          onClick={() => scrollTo('#hero')}
+        <Link 
+          to="/"
           className="flex items-center gap-4 cursor-pointer group"
         >
           <div className="w-12 h-12 rounded-2xl bg-orange-500 flex items-center justify-center text-white shadow-2xl shadow-orange-500/40 group-hover:rotate-[15deg] group-hover:scale-110 transition-all duration-500">
@@ -53,20 +48,23 @@ const Navbar = () => {
             <h1 className="text-white font-black text-xl leading-none tracking-tighter">THE OWL</h1>
             <p className="text-orange-500 text-[10px] uppercase font-black tracking-[0.4em] mt-1.5 opacity-80">Creations</p>
           </div>
-        </div>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => scrollTo(link.href)}
-              className="relative text-[10px] uppercase tracking-[0.2em] font-black text-gray-400 hover:text-white transition-all py-2 group"
-            >
-              {link.name}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-orange-500 transition-all duration-500 group-hover:w-full" />
-            </button>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`relative text-[10px] uppercase tracking-[0.2em] font-black transition-all py-2 group ${isActive ? 'text-white' : 'text-gray-400 hover:text-white'}`}
+              >
+                {link.name}
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-orange-500 transition-all duration-500 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+              </Link>
+            );
+          })}
           
           <button 
             onClick={() => setQuoteModal(true)}
@@ -98,16 +96,22 @@ const Navbar = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent pointer-events-none" />
             <div className="flex flex-col gap-8 relative z-10">
               {navLinks.map((link, i) => (
-                <motion.button
+                <motion.div
                   key={link.name}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  onClick={() => scrollTo(link.href)}
-                  className="text-3xl font-black text-white hover:text-orange-500 text-left transition-colors uppercase tracking-tight"
                 >
-                  {link.name}
-                </motion.button>
+                  <Link
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block text-3xl font-black text-left transition-colors uppercase tracking-tight ${
+                      location.pathname === link.href ? 'text-orange-500' : 'text-white hover:text-orange-500'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
               <div className="h-px bg-white/5 my-4" />
               <motion.button 

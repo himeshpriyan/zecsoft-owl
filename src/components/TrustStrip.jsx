@@ -11,9 +11,16 @@ const stats = [
 const TrustStrip = () => {
   return (
     <section id="trust" className="py-20 bg-black relative overflow-hidden">
-      {/* Dynamic Border */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/10 to-transparent" />
+      {/* Film Strip Edging */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-2 left-0 w-full h-2 opacity-30 mask-radial-fade flex overflow-hidden">
+        <div className="w-[200%] h-full animate-[ticker_20s_linear_infinite]" style={{ backgroundImage: 'linear-gradient(90deg, #FF6B00 40%, transparent 40%)', backgroundSize: '12px 100%' }} />
+      </div>
+
+      <div className="absolute bottom-2 left-0 w-full h-2 opacity-30 mask-radial-fade flex overflow-hidden">
+        <div className="w-[200%] h-full animate-[ticker_20s_linear_infinite_reverse]" style={{ backgroundImage: 'linear-gradient(90deg, #FF6B00 40%, transparent 40%)', backgroundSize: '12px 100%' }} />
+      </div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12">

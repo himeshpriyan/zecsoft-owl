@@ -38,6 +38,12 @@
   cursor: default;
 }
 
+@media (min-width: 1024px) {
+  * {
+    cursor: none !important;
+  }
+}
+
 button, a {
   cursor: pointer;
 }
@@ -120,6 +126,11 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 20px var(--orange-glow);
 }
 
+.mask-radial-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
 .btn-premium {
   background: linear-gradient(135deg, #FF6B00, #cc5500);
   color: white;
@@ -138,20 +149,21 @@ h1, h2, h3, h4, h5, h6 {
 .btn-premium::after {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-  transform: scale(0);
-  transition: transform 0.6s ease;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 300%;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(255,255,255,0.2) 60deg, transparent 120deg, rgba(255,255,255,0.2) 180deg, transparent 240deg, rgba(255,255,255,0.2) 300deg, transparent 360deg);
+  transform: translate(-50%, -50%) rotate(0deg) scale(0);
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 50%;
 }
 .btn-premium:hover {
   transform: scale(1.04) translateY(-4px);
   box-shadow: 0 25px 50px -10px var(--orange-glow);
 }
 .btn-premium:hover::after {
-  transform: scale(1);
+  transform: translate(-50%, -50%) rotate(90deg) scale(1);
 }
 
 .btn-outline {
