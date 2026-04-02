@@ -1,161 +1,122 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { services } from '../data/mockData';
-import { Plus, Check, ArrowRight, Zap, Sparkles } from 'lucide-react';
+import { Zap, Check, ArrowRight } from 'lucide-react';
+import ServiceDetailsPanel from './ServiceDetailsPanel';
 import { useApp } from '../context/AppContext';
 
-const ServicesModule = () => {
-  const [activeTab, setActiveTab] = useState(services[0]?.id || 'media');
-  const [hoveredId, setHoveredId] = useState(null);
-  const { addService, selectedServices } = useApp();
-
-  const currentCategory = services.find(cat => cat.id === activeTab);
-  const currentServices = currentCategory ? currentCategory.items : [];
+const ServicesModule = ({ interactive = false }) => {
+  const [selectedItem, setSelectedItem] = useState(null);
+  const { setQuoteModal } = useApp();
 
   return (
-    <section id="services" className="py-32 bg-black relative">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-2 mb-4"
-            >
-              <Zap size={16} className="text-orange-500 fill-orange-500" />
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-400">Our Expertise</span>
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-black text-white"
-            >
-              Tailored <span className="text-orange-500">Solutions</span>
-            </motion.h2>
-          </div>
+    <section id="services" className="py-24 bg-[#020203] relative overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-600/[0.02] blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-600/[0.02] blur-[150px] rounded-full pointer-events-none" />
 
-          {/* Category Tabs */}
-          <div className="flex flex-wrap gap-2">
-            {services.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveTab(cat.id)}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border ${activeTab === cat.id
-                    ? 'bg-orange-500 border-orange-500 text-white shadow-lg shadow-orange-500/20'
-                    : 'bg-white/5 border-white/5 text-gray-500 hover:text-white hover:border-white/10'
-                  }`}
-              >
-                {cat.category.split(' ')[1] || cat.category}
-              </button>
-            ))}
-          </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="mb-20 text-center max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center justify-center gap-3 mb-6"
+          >
+            <div className="w-8 h-[2px] bg-orange-500" />
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-500">Our Capabilities</span>
+            <div className="w-8 h-[2px] bg-orange-500" />
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-7xl font-black text-white leading-[0.95] tracking-tighter"
+          >
+            Complete <span className="text-orange-500">Service Coverage.</span>
+          </motion.h2>
+          <motion.p
+             initial={{ opacity: 0 }}
+             whileInView={{ opacity: 1 }}
+             viewport={{ once: true }}
+             transition={{ duration: 1, delay: 0.2 }}
+             className="text-gray-400 mt-8 text-lg font-medium"
+          >
+            Everything you need under one roof. We streamline elite production and digital architecture so you can focus on scale.
+          </motion.p>
         </div>
 
-        <motion.div
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          <AnimatePresence mode="popLayout">
-            {currentServices.map((service, index) => {
-              const isAdded = selectedServices.some(s => s.id === service.id);
-              const isHovered = hoveredId === service.id;
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {services.map((cat, index) => {
+            // Remove the hardcoded emoji from the category string for a cleaner look
+            const cleanCategoryName = cat.category.replace(/[^a-zA-Z\s&]/g, '').trim();
+            // Use the first item's emoji as the card's main icon
+            const mainIcon = cat.items[0]?.icon || '🎥';
 
-              return (
-                <motion.div
-                  key={service.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  onMouseEnter={() => setHoveredId(service.id)}
-                  onMouseLeave={() => setHoveredId(null)}
-                  className={`group relative p-8 rounded-3xl border transition-all duration-500 overflow-hidden cursor-pointer ${isHovered
-                      ? 'bg-orange-500/10 border-orange-500/40 shadow-2xl shadow-orange-500/10'
-                      : 'bg-white/5 border-white/5'
-                    }`}
-                >
-                  {/* Background Accents */}
-                  <div className={`absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-[60px] rounded-full transition-opacity duration-500 ${isHovered ? 'opacity-100Scale-110' : 'opacity-0'
-                    }`} />
-
-                  {/* Icon & Label */}
-                  <div className="relative z-10 flex items-start justify-between mb-8">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 ${isHovered ? 'bg-orange-500 text-white shadow-glow' : 'bg-white/10 text-orange-500'
-                      }`}>
-                      <span className="text-2xl">{service.icon}</span>
+            return (
+              <motion.div
+                key={cat.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/5 hover:border-orange-500/30 transition-all duration-500 group relative overflow-hidden shadow-2xl"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="flex items-center gap-5 mb-10">
+                    <div className="w-16 h-16 shrink-0 rounded-2xl bg-white/5 text-3xl flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all duration-500 shadow-xl group-hover:scale-110">
+                      {mainIcon}
                     </div>
-                    <div className="text-right">
-                      <p className="text-[10px] text-gray-500 uppercase font-black tracking-widest mb-1">Starting From</p>
-                      <p className="text-xl font-black text-white">₹{service.price.toLocaleString()}+</p>
-                    </div>
+                    <h3 className="text-2xl font-[1000] text-white uppercase tracking-tighter group-hover:text-orange-500 transition-colors">
+                      {cleanCategoryName}
+                    </h3>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 relative z-10 group-hover:text-orange-400 transition-colors">
-                    {service.label}
-                  </h3>
-
-                  <p className="text-sm text-gray-500 leading-relaxed mb-6 group-hover:text-gray-300 transition-colors">
-                    {service.description}
-                  </p>
-
-                  {/* Hover Expansion Content */}
-                  <motion.div
-                    initial={false}
-                    animate={{ height: isHovered ? 'auto' : 0, opacity: isHovered ? 1 : 0 }}
-                    className="overflow-hidden relative z-10"
-                  >
-                    <div className="pt-4 border-t border-white/10 space-y-3 mb-6">
-                      <p className="text-[10px] font-bold text-orange-500 uppercase tracking-widest">Key Benefits</p>
-                      {['Premium Quality', 'Fast Turnaround', 'Expert Direction'].map((b, i) => (
-                        <div key={i} className="flex items-center gap-2 text-xs text-gray-400">
-                          <Check size={12} className="text-orange-500" />
-                          <span>{b}</span>
+                  <div className="space-y-5 flex-1">
+                    {cat.items.map((item) => (
+                      <div 
+                        key={item.id} 
+                        className={`flex items-start gap-4 group/item p-3 -mx-3 rounded-2xl relative border border-transparent transition-all duration-300 ${interactive ? 'cursor-pointer hover:bg-white/[0.04] hover:shadow-lg hover:border-white/5' : ''}`}
+                        onClick={() => interactive && setSelectedItem(item)}
+                      >
+                        <div className={`mt-1 w-6 h-6 rounded-md bg-white/5 flex items-center justify-center shrink-0 transition-colors ${interactive ? 'group-hover/item:bg-orange-500/20 group-hover/item:text-orange-500' : ''}`}>
+                           <span className="text-[10px]">{interactive ? '✨' : '✔'}</span>
                         </div>
-                      ))}
-                    </div>
-                  </motion.div>
-
-                  {/* Action Button */}
-                  <div className="relative z-10 flex items-center gap-3">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        addService(service);
-                      }}
-                      disabled={isAdded}
-                      className={`flex-1 py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 ${isAdded
-                          ? 'bg-green-500/20 text-green-500 border border-green-500/20'
-                          : 'bg-white/10 text-white hover:bg-orange-500 border border-white/10 hover:border-orange-500'
-                        }`}
-                    >
-                      {isAdded ? <><Check size={14} /> Added</> : <><Plus size={14} /> Add to Project</>}
-                    </button>
-
-                    <button className="w-12 h-12 rounded-xl bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all border border-white/10">
-                      <ArrowRight size={18} />
-                    </button>
+                        <div className="flex-1">
+                          <div className="flex justify-between items-center mb-1.5">
+                             <p className={`text-white font-[900] text-[13px] uppercase tracking-wider leading-tight transition-colors ${interactive ? 'group-hover/item:text-orange-400' : ''}`}>{item.title}</p>
+                             {interactive && <ArrowRight size={12} className="text-gray-600 opacity-0 group-hover/item:opacity-100 group-hover/item:text-orange-500 group-hover/item:translate-x-1 transition-all" />}
+                          </div>
+                          <p className={`text-gray-500 text-[11px] leading-relaxed transition-colors ${interactive ? 'group-hover/item:text-gray-400' : ''}`}>{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
 
-                  {/* Floating Sparkle for active cards */}
-                  {isHovered && (
-                    <motion.div
-                      layoutId="sparkle"
-                      className="absolute top-4 left-4"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                    >
-                      <Sparkles size={14} className="text-orange-500 animate-pulse" />
-                    </motion.div>
-                  )}
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
+        <div className="mt-24 flex justify-center">
+            <button 
+              onClick={() => setQuoteModal(true)} 
+              className="btn-premium flex items-center text-sm gap-4 px-12 py-5 shadow-[0_20px_50px_rgba(255,107,0,0.3)] hover:scale-105 transition-transform duration-300"
+            >
+                DISCUSS YOUR REQUIREMENTS <ArrowRight size={20} />
+            </button>
+        </div>
       </div>
+
+      {interactive && (
+        <ServiceDetailsPanel 
+          item={selectedItem} 
+          isOpen={!!selectedItem} 
+          onClose={() => setSelectedItem(null)} 
+        />
+      )}
     </section>
   );
 };

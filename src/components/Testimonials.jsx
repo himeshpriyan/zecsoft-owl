@@ -19,7 +19,7 @@ const Testimonials = () => {
             className="flex items-center justify-center gap-3 mb-8"
           >
             <div className="w-8 h-[2px] bg-orange-500" />
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-500">Client Voices</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-orange-500">Client Feedback</span>
             <div className="w-8 h-[2px] bg-orange-500" />
           </motion.div>
           <motion.h2 
@@ -28,7 +28,7 @@ const Testimonials = () => {
             viewport={{ once: true }}
             className="text-5xl md:text-7xl font-black text-white mb-10 leading-[0.95] tracking-tighter"
           >
-            Global <span className="orange-text orange-glow">Testimonies.</span>
+            What People <span className="orange-text orange-glow">Say.</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -36,8 +36,8 @@ const Testimonials = () => {
             viewport={{ once: true }}
             className="text-gray-500 text-lg md:text-xl font-medium leading-relaxed"
           >
-            Don't just take our word for it. Explore the experiences of our elite 
-            partners and clients who have witnessed the Owl's cinematic vision.
+            Don't just take our word for it. Here is what our recent clients 
+            have to say about working with our team.
           </motion.p>
         </div>
 

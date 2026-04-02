@@ -5,26 +5,43 @@ import { useApp } from '../context/AppContext';
 import { Sparkles, ArrowRight, Brain, Zap, Target, Search, Check, RotateCcw } from 'lucide-react';
 
 const subServices = {
-  Video: [
-    { id: 'cinematography', label: 'Cinematography', price: 5000, desc: 'Cinematic visual storytelling' },
-    { id: 'video-editing', label: 'Video Editing', price: 3000, desc: 'Professional post-production' },
-    { id: 'short-film', label: 'Short Film', price: 15000, desc: 'Narrative filmmaking' },
-    { id: 'sfx', label: 'SFX & VFX', price: 6000, desc: 'High-end visual effects' },
+  Media: [
+      { id: 'cinematography', label: 'Cinematography', price: 25000, desc: 'Professional framing and storytelling' },
+      { id: 'direction', label: 'Direction', price: 20000, desc: 'Creative and technical leadership' },
+      { id: 'video-editing', label: 'Video Editing', price: 15000, desc: 'Professional post-production' },
+      { id: 'color-correction', label: 'Color Correction', price: 10000, desc: 'Film-grade visual balancing' },
+      { id: 'sfx', label: 'SFX', price: 18000, desc: 'Visual and sound effect integration' },
+      { id: 'product-shoot', label: 'Product Shoot', price: 12000, desc: 'High-end photography' },
+      { id: 'short-film', label: 'Short Film', price: 80000, desc: 'End-to-end film production' },
   ],
   Marketing: [
-    { id: 'social-media', label: 'Social Media', price: 8000, desc: 'Brand growth & engagement' },
-    { id: 'content-creation', label: 'Content Creation', price: 5000, desc: 'Viral-ready digital assets' },
-    { id: 'ad-campaigns', label: 'Ad Campaigns', price: 10000, desc: 'Targeted ROI-driven ads' },
+      { id: 'social-media', label: 'Social Media', price: 15000, desc: 'Consistent brand presence' },
+      { id: 'content-creation', label: 'Content Creation', price: 18000, desc: 'Tailored viral media' },
+      { id: 'marketing-post-design', label: 'Post Design', price: 10000, desc: 'High-converting graphics' },
+      { id: 'promotion', label: 'Promotion', price: 25000, desc: 'Targeted brand promotion' },
+      { id: 'ad-campaigns', label: 'Ad Campaigns', price: 30000, desc: 'Optimized ROI strategies' },
   ],
   Web: [
-    { id: 'website-dev', label: 'Web Dev', price: 20000, desc: 'High-performance platforms' },
-    { id: 'ui-ux', label: 'UI/UX Design', price: 12000, desc: 'User-centric interfaces' },
-    { id: 'landing-page', label: 'Landing Page', price: 8000, desc: 'Conversion-optimized pages' },
+      { id: 'website-dev', label: 'Website Dev', price: 45000, desc: 'Custom coded platforms' },
+      { id: 'ui-ux', label: 'UI/UX Design', price: 35000, desc: 'User experience design' },
+      { id: 'web-post-design', label: 'Web Post Design', price: 12000, desc: 'Creative web assets' },
+      { id: 'landing-page', label: 'Landing Page', price: 20000, desc: 'Conversion-focused pages' },
+      { id: 'responsive-design', label: 'Responsive Design', price: 30000, desc: 'Adaptive perfection' },
   ],
-  Event: [
-    { id: 'wedding', label: 'Wedding', price: 25000, desc: 'Eternal cinematic memories' },
-    { id: 'college-event', label: 'College Event', price: 5000, desc: 'Dynamic youth-focused media' },
-    { id: 'birthday', label: 'Birthday', price: 6000, desc: 'Heartwarming celebrations' },
+  Technical: [
+      { id: 'equipment', label: 'Equipment', price: 15000, desc: 'High-end gear provision' },
+      { id: 'application-dev', label: 'App Development', price: 60000, desc: 'Bespoke software solutions' },
+      { id: 'automation', label: 'Automation', price: 40000, desc: 'Workflow optimization' },
+  ],
+  Interior: [
+      { id: 'interior-design', label: 'Interior Design', price: 75000, desc: 'Transforming physical spaces' },
+  ],
+  Events: [
+      { id: 'college-event', label: 'College Events', price: 25000, desc: 'Youth-focused media' },
+      { id: 'school-event', label: 'School Events', price: 20000, desc: 'Institutional legacy coverage' },
+      { id: 'wedding', label: 'Wedding', price: 55000, desc: 'Cinematic wedding memories' },
+      { id: 'birthday', label: 'Birthday', price: 15000, desc: 'Heartwarming celebrations' },
+      { id: 'award', label: 'Award Functions', price: 45000, desc: 'Corporate respect coverage' },
   ],
 };
 
@@ -228,7 +245,7 @@ export default function SmartServiceSelector() {
                              </h3>
                              <p className="text-gray-500 text-[11px] uppercase tracking-[0.3em] font-black">Define the core objective of your masterpiece</p>
                            </div>
-                           <div className={`grid grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500 ${showPulse ? 'scale-[1.02]' : ''}`}>
+                           <div className={`grid grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 ${showPulse ? 'scale-[1.02]' : ''}`}>
                               {Object.keys(serviceCategories).map((cat) => (
                                  <motion.button
                                     key={cat}
@@ -238,8 +255,8 @@ export default function SmartServiceSelector() {
                                     className="group p-10 rounded-[3rem] bg-white/[0.03] border border-white/5 hover:border-orange-500/40 hover:bg-orange-500/[0.05] transition-all flex flex-col items-center gap-6 shadow-2xl relative overflow-hidden"
                                  >
                                     <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    <div className="text-5xl group-hover:scale-110 transition-transform duration-700 relative z-10">
-                                       {cat === 'Video' ? '🎬' : cat === 'Marketing' ? '📱' : cat === 'Web' ? '💻' : '🎉'}
+                                    <div className="text-4xl group-hover:scale-110 transition-transform duration-700 relative z-10">
+                                       {cat === 'Media' ? '🎬' : cat === 'Marketing' ? '📱' : cat === 'Web' ? '💻' : cat === 'Technical' ? '🤖' : cat === 'Interior' ? '🏡' : '🎉'}
                                     </div>
                                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-white transition-colors relative z-10">{cat}</span>
                                  </motion.button>

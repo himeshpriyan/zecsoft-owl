@@ -5,7 +5,7 @@ import BeforeAfterModule from '../components/BeforeAfterModule';
 export default function ServicesPage() {
   return (
     <main className="pt-24">
-      <ServicesModule />
+      <ServicesModule interactive={true} />
       <BeforeAfterModule />
     </main>
   );

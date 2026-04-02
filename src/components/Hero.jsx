@@ -112,7 +112,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: 'reverse' }}
-        onClick={() => scrollTo('#trust')}
+        onClick={() => scrollTo('#about')}
       >
         <span className="text-[9px] uppercase tracking-[0.4em] font-black text-orange-500/50 group-hover:text-orange-500 transition-colors">Shift Focus</span>
         <div className="relative w-px h-16 bg-gradient-to-b from-orange-500/20 to-transparent overflow-hidden">

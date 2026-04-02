@@ -35,7 +35,7 @@ const PortfolioModule = () => {
               className="flex items-center gap-2 mb-4"
             >
               <Sparkles size={16} className="text-orange-500" />
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-400">Featured Work</span>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-400">Our Work</span>
             </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 30 }}
@@ -43,7 +43,7 @@ const PortfolioModule = () => {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-black text-white"
             >
-              Live <span className="text-orange-500">Portfolio</span>
+              Recent <span className="text-orange-500">Projects</span>
             </motion.h2>
           </div>
 
@@ -135,7 +135,7 @@ const PortfolioModule = () => {
 
                   <div className="flex items-center gap-6">
                     <button className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.25em] text-white hover:text-orange-500 transition-all">
-                      View Masterpiece <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      View Details <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </button>
                     <div className="h-px flex-1 bg-white/5 group-hover:bg-orange-500/20 transition-all duration-700" />
                   </div>
@@ -164,7 +164,7 @@ const PortfolioModule = () => {
         {/* View More Button */}
         <div className="mt-16 text-center">
           <button className="btn-outline flex items-center gap-3 mx-auto group">
-            All Masterpieces <ExternalLink size={18} className="group-hover:rotate-12 transition-transform" />
+            View All Projects <ExternalLink size={18} className="group-hover:rotate-12 transition-transform" />
           </button>
         </div>
       </div>

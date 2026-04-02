@@ -36,16 +36,16 @@ const About = () => {
                      className="glass p-8 rounded-3xl border-white/10 backdrop-blur-2xl shadow-2xl relative overflow-hidden group/card"
                    >
                       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity" />
-                      <p className="text-4xl font-black text-orange-500 mb-2 relative z-10">12+</p>
-                      <p className="text-[10px] text-gray-400 uppercase font-black tracking-[0.25em] leading-relaxed relative z-10">Years of Global <br /> Artistic Vision</p>
+                      <p className="text-4xl font-black text-orange-500 mb-2 relative z-10">100%</p>
+                      <p className="text-[10px] text-gray-400 uppercase font-black tracking-[0.25em] leading-relaxed relative z-10">Dedication to <br /> Artistic Vision</p>
                    </motion.div>
                    <motion.div 
                      whileHover={{ y: -5 }}
                      className="glass p-8 rounded-3xl border-white/10 backdrop-blur-2xl shadow-2xl relative overflow-hidden group/card"
                    >
                       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity" />
-                      <p className="text-4xl font-black text-white mb-2 relative z-10">500+</p>
-                      <p className="text-[10px] text-gray-400 uppercase font-black tracking-[0.25em] leading-relaxed relative z-10">Elite Brands <br /> High-End Projects</p>
+                      <p className="text-4xl font-black text-white mb-2 relative z-10">∞</p>
+                      <p className="text-[10px] text-gray-400 uppercase font-black tracking-[0.25em] leading-relaxed relative z-10">Boundless <br /> Creative Potential</p>
                    </motion.div>
                 </div>
               </div>
@@ -59,11 +59,11 @@ const About = () => {
             >
                <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-2xl bg-orange-500 flex items-center justify-center text-white shadow-2xl shadow-orange-500/50">
-                     <Award size={28} />
+                     <Target size={28} />
                   </div>
                   <div>
-                     <p className="text-white font-black text-base uppercase tracking-tighter">Global Elite Agency</p>
-                     <p className="text-orange-500 text-[9px] font-black uppercase tracking-[0.3em]">Excellence Award 2024</p>
+                     <p className="text-white font-black text-base uppercase tracking-tighter">Committed to Quality</p>
+                     <p className="text-orange-500 text-[9px] font-black uppercase tracking-[0.3em]">Precision output</p>
                   </div>
                </div>
             </motion.div>
@@ -89,8 +89,8 @@ const About = () => {
                transition={{ duration: 0.8, delay: 0.2 }}
                className="text-5xl md:text-7xl font-black text-white mb-10 leading-[0.95] tracking-tighter"
             >
-               Crafting the <br />
-               <span className="orange-text orange-glow">Visual Legacy.</span>
+               A New Standard of <br />
+               <span className="orange-text orange-glow">Visual Precision.</span>
             </motion.h2>
 
             <motion.p 
@@ -100,15 +100,13 @@ const About = () => {
                transition={{ duration: 1, delay: 0.4 }}
                className="text-gray-400 text-lg md:text-xl mb-12 leading-relaxed font-medium opacity-80"
             >
-               We don't just produce content; we architect cinematic experiences. 
-               The Owl Creations bridges the gap between raw emotion and 
-               technical perfection, defining the next era of high-end visual brand storytelling.
+               We are an ambitious and passionate team of creators dedicated to engineering high-quality digital experiences. The Owl Creations was built on the core belief that elite visual storytelling and IT solutions should be accessible to all. Every project we touch is treated as our flagship masterpiece.
             </motion.p>
 
             <div className="grid gap-8 mb-16">
                {[
-                 { icon: Users, title: "Elite Collective", desc: "A world-class ensemble of award-winning cinematographers, directors, and design engineers." },
-                 { icon: Target, title: "Global Impact", desc: "Our vision defines premium narratives for industry leaders across three continents." }
+                 { icon: Users, title: "Passionate Visionaries", desc: "A tightly-knit ensemble of highly skilled cinematographers, developers, and design engineers." },
+                 { icon: Zap, title: "Driven by Impact", desc: "We focus heavily on creating meaningful, robust digital ecosystems that fuel massive growth." }
                ].map((item, i) => (
                  <motion.div 
                    key={i} 

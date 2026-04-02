@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useApp } from '../context/AppContext';
+import { services } from '../data/mockData';
 
 export default function QuoteModal() {
   const { quoteModal, setQuoteModal, showNotification } = useApp();
@@ -51,13 +52,16 @@ export default function QuoteModal() {
                 <div>
                   <label className="text-gray-400 text-xs font-semibold block mb-1.5">Service Needed</label>
                   <select className="w-full bg-gray-900 border border-gray-700 text-white rounded-xl px-3 py-2.5 outline-none focus:border-orange-500 text-sm cursor-pointer">
-                    <option>Cinematography / Videography</option>
-                    <option>Digital Marketing</option>
-                    <option>Website Development</option>
-                    <option>Event Coverage</option>
-                    <option>Product Shoot</option>
-                    <option>Multiple Services</option>
-                    <option>Other</option>
+                    <option value="">Select a specific service</option>
+                    {services.map((cat) => (
+                      <optgroup key={cat.id} label={cat.category.replace(/[^a-zA-Z\s&]/g, '').trim()}>
+                        {cat.items.map((item) => (
+                           <option key={item.id} value={item.title}>{item.title}</option>
+                        ))}
+                      </optgroup>
+                    ))}
+                    <option value="multiple">Multiple Services</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
                 <div>

@@ -1,87 +1,87 @@
 // ============================================================
-// ELITE MOCK DATA - The Owl Creations (Cinematic Vision)
+// REALISTIC MOCK DATA - The Owl Creations
 // ============================================================
 
 export const services = [
   {
     id: 'media',
-    category: '🎥 Elite Cinematography',
+    category: '🎥 Media Production',
     color: '#FF6B00',
     items: [
-      { id: 'cinematography', title: 'Elite Cinematography', icon: '🎬', benefit: 'RED Cinema shots with master-level framing', price: 75000 },
-      { id: 'direction', title: 'Creative Direction', icon: '🎭', benefit: 'Artistic vision and narrative architecture', price: 45000 },
-      { id: 'video-editing', title: 'Director\'s Cut Editing', icon: '✂️', benefit: 'Precision-timed, rhythmic visual storytelling', price: 35000 },
-      { id: 'color-correction', title: 'Film Grade Grading', icon: '🎨', benefit: 'Hollyword-standard color science & LUTs', price: 25000 },
-      { id: 'sfx', title: 'Atmospheric VFX', icon: '✨', benefit: 'Hyper-realistic visual enhancement & SFX', price: 65000 },
-      { id: 'product-shoot', title: 'Architectural Look', icon: '📷', benefit: 'Elite product lighting & macro-narratives', price: 38000 },
-      { id: 'short-film', title: 'Avenue Production', icon: '🎞️', benefit: 'Full-scale theatrical production & scripting', price: 155000 },
+      { id: 'cinematography', title: 'Cinematography', icon: '🎬', description: 'Professional framing and cinematic storytelling.', benefit: 'High-quality equipment and experienced framing.', price: 25000 },
+      { id: 'direction', title: 'Direction', icon: '🎭', description: 'Complete creative and technical leadership.', benefit: 'Cohesive vision for your visual projects.', price: 20000 },
+      { id: 'video-editing', title: 'Video Editing', icon: '✂️', description: 'Professional post-production and cutting.', benefit: 'Pacing and narrative structuring.', price: 15000 },
+      { id: 'color-correction', title: 'Color Correction', icon: '🎨', description: 'Color grading and visual balancing.', benefit: 'Professional color tone matching.', price: 10000 },
+      { id: 'sfx', title: 'SFX (Special Effects)', icon: '✨', description: 'Visual and sound effect integration.', benefit: 'Enhanced visual fidelity.', price: 18000 },
+      { id: 'product-shoot', title: 'Product Shoot', icon: '📷', description: 'High-quality photography for products.', benefit: 'Boost e-commerce and catalog appeal.', price: 12000 },
+      { id: 'short-film', title: 'Short Film Production', icon: '🎞️', description: 'End-to-end film production pipeline.', benefit: 'Complete cinematography, editing, color, and SFX.', price: 80000 },
     ]
   },
   {
     id: 'marketing',
-    category: '📱 Brand Architect',
+    category: '📱 Digital Marketing',
     color: '#8B5CF6',
     items: [
-      { id: 'social-media', title: 'Ecosystem Management', icon: '📲', benefit: 'Viral growth architecture & community building', price: 85000 },
-      { id: 'content-creation', title: 'Premium Asset Suite', icon: '✍️', benefit: 'High-converting cinematic ad-creatives', price: 55000 },
-      { id: 'post-design', title: 'Elite Visual Design', icon: '🖼️', benefit: 'State-of-the-art graphics for global reach', price: 35000 },
-      { id: 'promotion', title: 'Strategic Inception', icon: '📢', benefit: 'High-ROI growth campaigns & data-science', price: 75000 },
-      { id: 'ad-campaigns', title: 'Precision Ad Suite', icon: '🚀', benefit: 'Hyper-targeted algorithmic ad strategy', price: 105000 },
+      { id: 'social-media', title: 'Social Media Management', icon: '📲', description: 'Consistent brand presence on social platforms.', benefit: 'Grow your digital footprint and audience.', price: 15000 },
+      { id: 'content-creation', title: 'Content Creation', icon: '✍️', description: 'Tailored posts, reels, and media.', benefit: 'Engaging content tailored for virality.', price: 18000 },
+      { id: 'marketing-post-design', title: 'Post Design', icon: '🖼️', description: 'Graphics tailored for marketing campaigns.', benefit: 'High-converting visual aesthetic.', price: 10000 },
+      { id: 'promotion', title: 'Promotion', icon: '📢', description: 'Targeted brand promotion across networks.', benefit: 'Increased visibility and reach.', price: 25000 },
+      { id: 'ad-campaigns', title: 'Ad Campaign Management', icon: '🚀', description: 'Management of paid digital ad strategies.', benefit: 'Optimized ROI for paid traffic.', price: 30000 },
     ]
   },
   {
     id: 'web',
-    category: '💻 High-Performance Web',
+    category: '💻 Web & Design',
     color: '#06B6D4',
     items: [
-      { id: 'website-dev', title: 'Flagship Platform Dev', icon: '🌐', benefit: '0.1s load speed & infinite scalability', price: 250000 },
-      { id: 'ui-ux', title: 'Behavioral Experience', icon: '🎯', benefit: 'Neuromorphic design that drives action', price: 125000 },
-      { id: 'landing-page', title: 'Conversion Masterclass', icon: '📄', benefit: 'Highest-converting single-page hubs', price: 85000 },
-      { id: 'responsive-design', title: 'Adaptive Luxury', icon: '📱', benefit: 'Perfectly optimized across all devices', price: 65000 },
+      { id: 'website-dev', title: 'Website Development', icon: '🌐', description: 'Custom coded fast platforms and applications.', benefit: 'Robust digital ecosystem for your brand.', price: 45000 },
+      { id: 'ui-ux', title: 'UI/UX Design', icon: '🎯', description: 'User interface and experience design.', benefit: 'Intuitive flow that increases conversions.', price: 35000 },
+      { id: 'web-post-design', title: 'Post Design', icon: '🎨', description: 'Creative web assets and banners.', benefit: 'Cohesive branding across your site.', price: 12000 },
+      { id: 'landing-page', title: 'Landing Page Design', icon: '📄', description: 'Targeted single-page websites.', benefit: 'Conversion-optimized focus pages.', price: 20000 },
+      { id: 'responsive-design', title: 'Responsive Website Design', icon: '📱', description: 'Mobile, tablet, and desktop adaptive sites.', benefit: 'Perfect viewing experience on any device.', price: 30000 },
     ]
   },
   {
     id: 'technical',
-    category: '🛠️ AI & Automation',
+    category: '🛠️ Technical & Dev',
     color: '#10B981',
     items: [
-      { id: 'automation', title: 'AI Workflow Engine', icon: '🤖', benefit: 'Intelligent automation for enterprise scale', price: 155000 },
-      { id: 'app-dev', title: 'Custom App Ecosystem', icon: '📱', benefit: 'Bespoke mobile/desktop internal systems', price: 355000 },
+      { id: 'equipment', title: 'Equipment', icon: '🎥', description: 'High-end technical gear provision.', benefit: 'Industry-standard production tools.', price: 15000 },
+      { id: 'application-dev', title: 'Application Development', icon: '💻', description: 'Custom mobile and desktop software.', benefit: 'Bespoke software solutions.', price: 60000 },
+      { id: 'automation', title: 'Automation Solutions', icon: '🤖', description: 'Workflow automation and scripting.', benefit: 'Save thousands of hours of manual work.', price: 40000 },
     ]
   },
   {
     id: 'interior',
-    category: '🏠 Cinematic Interiors',
+    category: '🏠 Interior Designing',
     color: '#F59E0B',
     items: [
-      { id: 'interior-design', title: 'Concept Architecture', icon: '🏡', benefit: 'Transforming spaces into living art pieces', price: 105000 },
-      { id: 'interior-3d', title: 'Hyper-Realistic 3D', icon: '🎨', benefit: 'V-Ray powered visual walk-throughs', price: 85000 },
-      { id: 'interior-styling', title: 'Curated Aesthetics', icon: '🛋️', benefit: 'Professional elite-level styling', price: 55000 },
+      { id: 'interior-design', title: 'Interior Designing', icon: '🏡', description: 'Transforms physical spaces beautifully.', benefit: 'Aesthetically pleasing and functional spaces.', price: 75000 },
     ]
   },
   {
     id: 'events',
-    category: '🎉 Event Experiences',
+    category: '🎉 Event Coverage',
     color: '#EC4899',
     items: [
-      { id: 'college-event', title: 'Festival Architect', icon: '🎓', benefit: 'Large-scale live production & experience', price: 155000 },
-      { id: 'school-event', title: 'Heritage Coverage', icon: '🏫', benefit: 'Preserving institutional legacy with class', price: 85000 },
-      { id: 'wedding', title: 'Eternal Collective', icon: '💍', benefit: 'Cinematic wedding masterpieces & memoirs', price: 355000 },
-      { id: 'birthday', title: 'Private Celebration', icon: '🎂', benefit: 'Elite coverage for high-profile birthdays', price: 75000 },
-      { id: 'award', title: 'Galactic Functions', icon: '🏆', benefit: 'Corporate award shows that command respect', price: 185000 },
+      { id: 'college-event', title: 'College Events', icon: '🎓', description: 'Complete media coverage for universities.', benefit: 'Dynamic youth-focused media.', price: 25000 },
+      { id: 'school-event', title: 'School Events', icon: '🏫', description: 'Preserving institutional legacy.', benefit: 'Professional coverage for parents and staff.', price: 20000 },
+      { id: 'wedding', title: 'Wedding Events', icon: '💍', description: 'Cinematic wedding masterpieces & memoirs.', benefit: 'Eternal cinematic memories.', price: 55000 },
+      { id: 'birthday', title: 'Birthday Events', icon: '🎂', description: 'Memorable birthday party coverage.', benefit: 'Heartwarming celebration videos.', price: 15000 },
+      { id: 'award', title: 'Award Functions', icon: '🏆', description: 'Multi-camera corporate award shoots.', benefit: 'Corporate coverage that commands respect.', price: 45000 },
     ]
   }
 ];
 
 export const portfolio = [
-  { id: 1, title: 'The Eternal Wedding Film', category: 'Wedding', thumbnail: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80', description: 'A 45-minute cinematic odyssey for the Malhotra-Kapoor union. Shot on RED V-Raptor with anamorphic lenses.', tags: ['Anamorphic', 'RE Cinema', 'Master Grading'] },
-  { id: 2, title: 'X-Orbit Brand Genesis', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80', description: 'A high-octane brand introduction for India\'s newest unicorn venture, generating 10M+ collective reach.', tags: ['Direction', 'High-Octane', 'Impact'] },
-  { id: 3, title: 'Epicurean Product Shoot', category: 'Product', thumbnail: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80', description: 'Macro-cinematography for a Michelin-star restaurant chain. Capturing the soul of culinary craft.', tags: ['Macro-Cinema', 'Atmosphere'] },
-  { id: 4, title: 'Ocean Legacy Documentary', category: 'Social', thumbnail: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80', description: 'Award-winning preservation documentary highlighting the delicate balance of coastal ecosystems.', tags: ['Documentary', 'Storytelling', 'Impact'] },
-  { id: 5, title: 'Techno-Fest Experience', category: 'Event', thumbnail: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80', description: 'Multi-camera 4K live broadcast and after-movie for a 20,000+ attendee college festival.', tags: ['Live Broadcast', 'Festival'] },
-  { id: 6, title: 'Aura Luxury Interface', category: 'Web', thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', description: 'Hyper-responsive e-commerce platform for an international luxury brand with 3D product previews.', tags: ['Next.js', '3D Interactivity', 'UX'] },
-  { id: 7, title: 'Genesis Birthday Memoir', category: 'Event', thumbnail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', description: 'A personalized cinematic journey for a landmark 25th anniversary, blending live events with interviews.', tags: ['Memoir', 'Cinematography'] },
-  { id: 8, title: 'Industry Titan Awards', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80', description: 'Full broadcast-style production for the Annual Indian Industry Leadership Awards.', tags: ['Corporate', 'Broadcast'] },
+  { id: 1, title: 'Wedding Highlight Video', category: 'Wedding', thumbnail: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80', description: 'A beautiful video covering the entire wedding day from start to finish.', tags: ['Video Editing', 'Cinematography'] },
+  { id: 2, title: 'Startup Brand Promo', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80', description: 'A short promotional video created to introduce a new business to social media.', tags: ['Marketing', 'Promo Video'] },
+  { id: 3, title: 'Restaurant Food Shoot', category: 'Product', thumbnail: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80', description: 'High-quality photography of menu items for a local restaurant.', tags: ['Product Shoot', 'Photography'] },
+  { id: 4, title: 'NGO Awareness Campaign', category: 'Social', thumbnail: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80', description: 'A social media campaign designed to raise awareness for ocean cleaning.', tags: ['Social Media', 'Content Creation'] },
+  { id: 5, title: 'College Fest Coverage', category: 'Event', thumbnail: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80', description: 'Full day photography and video coverage of a college cultural festival.', tags: ['Event Coverage', 'Photography'] },
+  { id: 6, title: 'Clothing Brand Website', category: 'Web', thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', description: 'A fast, responsive e-commerce website built for a new clothing store.', tags: ['Web Development', 'UI/UX'] },
+  { id: 7, title: '25th Birthday Party Video', category: 'Event', thumbnail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', description: 'A fun highlight video of a birthday celebration with family and friends.', tags: ['Event Coverage', 'Video Editing'] },
+  { id: 8, title: 'Business Conference Shoot', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80', description: 'Professional recording of guest speakers at an annual business conference.', tags: ['Corporate', 'Cinematography'] },
 ];
 
 export const testimonials = [
@@ -93,19 +93,21 @@ export const testimonials = [
 ];
 
 export const whyChooseUs = [
-  { icon: '🎬', title: 'RED-Grade Optics', description: 'Cinematic-standard production using RED V-Raptor cameras and Arri Cooke anamorphic prime lenses.', highlight: 'Cinema-Standard' },
-  { icon: '⚡', title: 'Precision Delivery', description: 'Elite efficiency. Initial cinematic cuts delivered within a 48-hour premium window.', highlight: '48H Delivery' },
-  { icon: '💡', title: 'Narrative Architect', description: 'We don\'t follow trends; we create them. Every frame is a calculated move in your brand\'s story.', highlight: 'Creative Master-mind' },
-  { icon: '💰', title: 'Elite Investment', description: 'Exceptional ROI. Every rupee invested translates into high-impact visual value and conversion.', highlight: 'High-Value ROI' },
-  { icon: '🏆', title: '500+ Projects Done', description: 'A legacy of excellence working with global brands, celebrities, and visionaries worldwide.', highlight: 'Global Standard' },
-  { icon: '🤝', title: '24/7 Elite Concierge', description: 'Your vision is our priority. Around-the-clock dedicated creative support for all global time zones.', highlight: 'Total Dedication' },
+  { icon: '🎬', title: 'High-Quality Equipment', description: 'We use professional cameras and top-tier software to ensure your videos and designs look stunning.', highlight: 'Top Gear' },
+  { icon: '⚡', title: 'Fast Delivery', description: 'We work quickly and efficiently. You can expect to see the first draft of your project in no time.', highlight: 'Quick Turnaround' },
+  { icon: '💡', title: 'Creative Storytelling', description: 'We don\'t just take pictures or make posts; we tell your brand\'s story in a way people love.', highlight: 'Great Ideas' },
+  { icon: '💰', title: 'Value for Money', description: 'We offer great quality services at fair prices. Every rupee you spend helps grow your business.', highlight: 'Great Value' },
+  { icon: '🏆', title: '100% Quality Assured', description: 'We care about your success and treat every project like it\'s our own. We guarantee you\'ll be happy.', highlight: 'Top Quality' },
+  { icon: '🤝', title: 'Always Here for You', description: 'We are friendly and always available to answer your questions and support you whenever you need us.', highlight: 'Full Support' },
 ];
 
 export const serviceCategories = {
-  Video: ['Elite Cinematography', 'Creative Direction', 'Director\'s Cut Editing', 'Film Grade Grading', 'Atmospheric VFX', 'Avenue Production'],
-  Marketing: ['Ecosystem Management', 'Premium Asset Suite', 'Elite Visual Design', 'Strategic Inception', 'Precision Ad Suite'],
-  Web: ['Flagship Platform Dev', 'Behavioral Experience', 'Conversion Masterclass', 'Adaptive Luxury'],
-  Event: ['Festival Architect', 'Heritage Coverage', 'Eternal Collective', 'Private Celebration', 'Galactic Functions'],
+  Media: ['Cinematography', 'Direction', 'Video Editing', 'Color Correction', 'SFX', 'Product Shoot', 'Short Film'],
+  Marketing: ['Social Media', 'Content Creation', 'Post Design', 'Promotion', 'Ad Campaigns'],
+  Web: ['Website Development', 'UI/UX Design', 'Landing Page Design', 'Responsive Design'],
+  Technical: ['Equipment', 'Application Dev', 'Automation'],
+  Interior: ['Interior Designing'],
+  Events: ['College Event', 'School Event', 'Wedding', 'Birthday', 'Award Functions'],
 };
 
 export const budgetMultipliers = {

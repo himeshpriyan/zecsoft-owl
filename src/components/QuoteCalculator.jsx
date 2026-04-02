@@ -4,11 +4,12 @@ import { Camera, Video, Monitor, Globe, BarChart, Calendar, ChevronRight, Check,
 import { useApp } from '../context/AppContext';
 
 const services = [
-  { id: 'video', icon: Video, label: 'Cinematography', base: 25000 },
+  { id: 'media', icon: Camera, label: 'Media Production', base: 25000 },
   { id: 'marketing', icon: BarChart, label: 'Digital Marketing', base: 15000 },
-  { id: 'web', icon: Globe, label: 'Web Design', base: 20000 },
-  { id: 'event', icon: Calendar, label: 'Event Coverage', base: 12000 },
-  { id: 'product', icon: Camera, label: 'Product Shoot', base: 8000 },
+  { id: 'web', icon: Globe, label: 'Web & Design', base: 20000 },
+  { id: 'technical', icon: Monitor, label: 'Tech & Dev', base: 40000 },
+  { id: 'interior', icon: Sparkles, label: 'Interior Design', base: 75000 },
+  { id: 'events', icon: Calendar, label: 'Event Coverage', base: 25000 },
 ];
 
 const addons = [
