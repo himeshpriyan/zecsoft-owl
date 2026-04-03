@@ -7,6 +7,7 @@ import { useApp } from '../context/AppContext';
 
 const ServicesModule = ({ interactive = false }) => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [expandedCategory, setExpandedCategory] = useState(null);
   const { setQuoteModal } = useApp();
 
   return (
@@ -65,17 +66,26 @@ const ServicesModule = ({ interactive = false }) => {
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center gap-5 mb-10">
-                    <div className="w-16 h-16 shrink-0 rounded-2xl bg-white/5 text-3xl flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all duration-500 shadow-xl group-hover:scale-110">
-                      {mainIcon}
+                  <div 
+                    className="flex items-center justify-between cursor-pointer md:cursor-auto group/header"
+                    onClick={() => setExpandedCategory(expandedCategory === cat.id ? null : cat.id)}
+                  >
+                    <div className="flex items-center gap-5">
+                      <div className="w-16 h-16 shrink-0 rounded-2xl bg-white/5 text-3xl flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all duration-500 shadow-xl group-hover:scale-110">
+                        {mainIcon}
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-[1000] text-white uppercase tracking-tighter group-hover:text-orange-500 transition-colors">
+                        {cleanCategoryName}
+                      </h3>
                     </div>
-                    <h3 className="text-2xl font-[1000] text-white uppercase tracking-tighter group-hover:text-orange-500 transition-colors">
-                      {cleanCategoryName}
-                    </h3>
+                    <div className={`md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 text-gray-400 transition-all duration-300 ${expandedCategory === cat.id ? 'rotate-90 bg-orange-500/20 text-orange-500' : ''}`}>
+                       <ArrowRight size={18} />
+                    </div>
                   </div>
 
-                  <div className="space-y-5 flex-1">
-                    {cat.items.map((item) => (
+                  <div className={`flex flex-col transition-all duration-500 overflow-hidden md:max-h-[2000px] md:opacity-100 md:mt-10 md:flex-1 ${expandedCategory === cat.id ? 'max-h-[2000px] opacity-100 mt-8 flex-1' : 'max-h-0 opacity-0 mt-0 flex-none'}`}>
+                    <div className="space-y-5">
+                      {cat.items.map((item) => (
                       <div 
                         key={item.id} 
                         className={`flex items-start gap-4 group/item p-3 -mx-3 rounded-2xl relative border border-transparent transition-all duration-300 ${interactive ? 'cursor-pointer hover:bg-white/[0.04] hover:shadow-lg hover:border-white/5' : ''}`}
@@ -92,7 +102,8 @@ const ServicesModule = ({ interactive = false }) => {
                           <p className={`text-gray-500 text-[11px] leading-relaxed transition-colors ${interactive ? 'group-hover/item:text-gray-400' : ''}`}>{item.description}</p>
                         </div>
                       </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>
