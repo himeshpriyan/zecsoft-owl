@@ -29,16 +29,16 @@ export default function BuildYourProject() {
   const activeCategory = services.find(cat => cat.id === activeCategoryId);
 
   return (
-    <section id="quote" className="py-24 bg-[#0d0d0d]">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="quote" className="py-16 md:py-24 bg-[#0d0d0d]">
+      <div className="max-w-4xl mx-auto px-4 md:px-6">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
           <span className="text-orange-400 font-black uppercase tracking-widest text-[10px]">🏗️ Get a Custom Estimate</span>
-          <h2 className="section-heading text-white mt-4 text-4xl md:text-5xl font-black">Build Your <span className="text-orange-500">Project</span></h2>
-          <p className="text-gray-400 mt-4 text-lg">Select the specific services you need below to help us tailor your quote.</p>
+          <h2 className="section-heading text-white mt-4 text-3xl md:text-5xl font-black">Build Your <span className="text-orange-500">Project</span></h2>
+          <p className="text-gray-400 mt-4 text-base md:text-lg">Select the specific services you need below to help us tailor your quote.</p>
         </motion.div>
 
-        <div className="glass rounded-[2.5rem] p-8 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange-600/[0.03] blur-[100px] rounded-full pointer-events-none" />
+        <div className="glass rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-orange-600/[0.03] blur-[100px] rounded-full pointer-events-none" />
           
           <form onSubmit={handleSubmit} className="relative z-10 space-y-8">
             

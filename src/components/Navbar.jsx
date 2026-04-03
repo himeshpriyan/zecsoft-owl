@@ -29,11 +29,11 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-700 px-6 py-6 ${
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-700 px-4 py-4 md:px-6 md:py-6 ${
         isScrolled ? 'md:py-4' : 'md:py-8'
       }`}
     >
-      <div className={`container mx-auto px-8 py-4 rounded-[2rem] transition-all duration-700 flex items-center justify-between ${
+      <div className={`container mx-auto px-5 py-3 md:px-8 md:py-4 rounded-[2rem] transition-all duration-700 flex items-center justify-between ${
         isScrolled ? 'glass border-white/10 shadow-2xl' : 'bg-transparent'
       }`}>
         {/* Logo */}
@@ -91,10 +91,10 @@ const Navbar = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-            className="fixed inset-x-0 top-28 mx-6 p-10 glass rounded-[3rem] z-[999] border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] md:hidden overflow-hidden"
+            className="fixed inset-x-0 top-24 mx-4 p-6 md:p-10 glass rounded-[2rem] z-[999] border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] md:hidden overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent pointer-events-none" />
-            <div className="flex flex-col gap-8 relative z-10">
+            <div className="flex flex-col gap-5 relative z-10">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}
@@ -105,7 +105,7 @@ const Navbar = () => {
                   <Link
                     to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block text-3xl font-black text-left transition-colors uppercase tracking-tight ${
+                    className={`block text-xl font-black text-left transition-colors uppercase tracking-widest ${
                       location.pathname === link.href ? 'text-orange-500' : 'text-white hover:text-orange-500'
                     }`}
                   >
