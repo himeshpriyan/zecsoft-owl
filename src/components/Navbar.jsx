@@ -97,13 +97,13 @@ const Navbar = () => {
                   key={link.name}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ delay: i * 0.05 }}
                 >
                   <Link
                     to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block py-3 text-2xl font-[900] text-left transition-colors uppercase tracking-[0.15em] ${
-                      location.pathname === link.href ? 'text-orange-500' : 'text-white hover:text-orange-500'
+                    className={`block py-4 text-xl sm:text-2xl font-[900] text-left transition-colors uppercase tracking-[0.15em] ${
+                      location.pathname === link.href ? 'text-orange-500' : 'text-white active:text-orange-500'
                     }`}
                   >
                     {link.name}

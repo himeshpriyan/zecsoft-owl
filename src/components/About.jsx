@@ -4,7 +4,7 @@ import { Award, Zap, Shield, Clock, Users, Building, Target, ArrowRight } from '
 
 const About = () => {
   return (
-    <section id="about" className="py-32 bg-[#020203] relative overflow-hidden">
+    <section id="about" className="relative overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-orange-600/5 blur-[120px] rounded-full pointer-events-none" />
       
@@ -25,7 +25,7 @@ const About = () => {
                 <img 
                   src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&q=90" 
                   alt="Elite Creative Team"
-                  className="w-full h-[500px] md:h-[700px] object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out" 
+                  className="w-full h-[350px] sm:h-[500px] md:h-[700px] object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#020203] via-transparent to-transparent opacity-90" />
                 
@@ -87,7 +87,7 @@ const About = () => {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8, delay: 0.2 }}
-               className="text-5xl md:text-7xl font-black text-white mb-10 leading-[0.95] tracking-tighter"
+               className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-10 leading-[1.1] tracking-tighter"
             >
                A New Standard of <br />
                <span className="orange-text orange-glow">Visual Precision.</span>

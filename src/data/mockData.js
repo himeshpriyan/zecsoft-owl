@@ -64,25 +64,25 @@ export const services = [
     category: '🎉 Event Coverage',
     color: '#EC4899',
     items: [
-      { id: 'college-event', title: 'College Events', icon: '🎓', description: 'Complete media coverage for universities.', benefit: 'Dynamic youth-focused media.', price: 25000 },
-      { id: 'school-event', title: 'School Events', icon: '🏫', description: 'Preserving institutional legacy.', benefit: 'Professional coverage for parents and staff.', price: 20000 },
-      { id: 'wedding', title: 'Wedding Events', icon: '💍', description: 'Cinematic wedding masterpieces & memoirs.', benefit: 'Eternal cinematic memories.', price: 55000 },
-      { id: 'birthday', title: 'Birthday Events', icon: '🎂', description: 'Memorable birthday party coverage.', benefit: 'Heartwarming celebration videos.', price: 15000 },
-      { id: 'award', title: 'Award Functions', icon: '🏆', description: 'Multi-camera corporate award shoots.', benefit: 'Corporate coverage that commands respect.', price: 45000 },
+      { id: 'college-event', title: 'College Events', icon: '🎓', description: 'We cover your college events with professional media, giving students and parents lasting memories.', benefit: 'Dynamic youth-focused media.', price: 25000 },
+      { id: 'school-event', title: 'School Events', icon: '🏫', description: 'We document key school moments, helping institutions build a strong and lasting digital presence.', benefit: 'Professional coverage for parents and staff.', price: 20000 },
+      { id: 'wedding', title: 'Wedding Events', icon: '💍', description: 'We capture your wedding beautifully so you can relive those memories for a lifetime.', benefit: 'Eternal cinematic memories.', price: 55000 },
+      { id: 'birthday', title: 'Birthday Events', icon: '🎂', description: 'We turn your birthday celebration into a heartwarming video that friends and family will love.', benefit: 'Heartwarming celebration videos.', price: 15000 },
+      { id: 'award', title: 'Award Functions', icon: '🏆', description: 'We professionally cover your award events, giving your organization a polished and credible image.', benefit: 'Corporate coverage that commands respect.', price: 45000 },
     ]
   }
 ];
 
 export const portfolio = [
-  { id: 1, title: 'Dental Clinic Website Redesign', category: 'Web Design', thumbnail: 'https://images.unsplash.com/photo-1540562947137-b1a92e105db0?w=800&q=80', description: 'Designed a modern website that increased user engagement by 40%.', tags: ['Web Design', 'UI/UX'] },
-  { id: 2, title: 'Corporate Promo For SaaS', category: 'Video Editing', thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80', description: 'Created an engaging video overview that helped increase landing page conversions.', tags: ['Video Editing', 'Cinematography'] },
-  { id: 3, title: 'E-Commerce Strategy', category: 'Marketing', thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', description: 'Managed ad campaigns that brought more customers and boosted online store revenue.', tags: ['Marketing', 'Ads'] }
+  { id: 1, title: 'Business Website for Local Brand', category: 'Web Design', thumbnail: 'https://images.unsplash.com/photo-1540562947137-b1a92e105db0?w=800&q=80', description: 'Designed a clean, fast website that increased online engagement by 40%.', tags: ['Web Design', 'UI/UX'] },
+  { id: 2, title: 'Product Video Ad for E-Commerce', category: 'Video Editing', thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80', description: 'Produced a short video ad that improved customer reach and product visibility.', tags: ['Video Editing', 'Cinematography'] },
+  { id: 3, title: 'Social Media Marketing Campaign', category: 'Marketing', thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', description: 'Ran targeted campaigns that brought in more customers and increased brand awareness.', tags: ['Marketing', 'Ads'] }
 ];
 
 export const testimonials = [
-  { id: 1, name: 'Arjun M.', role: 'Startup Founder', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arjun', rating: 5, review: 'Great service and very responsive team. They understood what we needed.', location: 'Delhi' },
-  { id: 2, name: 'Samantha P.', role: 'Marketing Director', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sam', rating: 5, review: 'Fast, professional, and affordable. The output really helped us get more leads.', location: 'Bangalore' },
-  { id: 3, name: 'Ravi Chopra', role: 'E-commerce Owner', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ravi', rating: 5, review: 'They delivered ahead of schedule. Very happy with the quality of the work!', location: 'London' }
+  { id: 1, name: 'Arjun M.', role: 'Startup Founder', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arjun', rating: 5, review: 'Great service and very responsive team. Highly satisfied with the results.', location: 'Delhi' },
+  { id: 2, name: 'Samantha P.', role: 'Marketing Director', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sam', rating: 5, review: 'Professional work and quick delivery. Really happy with the final output.', location: 'Bangalore' },
+  { id: 3, name: 'Ravi Chopra', role: 'E-commerce Owner', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ravi', rating: 5, review: 'Delivered exactly what we needed, on time and within budget. Great team to work with.', location: 'Mumbai' }
 ];
 
 export const whyChooseUs = [

@@ -5,7 +5,7 @@ import { Star, Quote, Sparkles, MessageCircle } from 'lucide-react';
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-32 bg-[#020203] relative overflow-hidden">
+    <section id="testimonials" className="relative overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-600/[0.03] blur-[160px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-[-10%] w-[600px] h-[600px] bg-orange-600/[0.02] blur-[140px] rounded-full pointer-events-none" />
@@ -26,7 +26,7 @@ const Testimonials = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-black text-white mb-10 leading-[0.95] tracking-tighter"
+            className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-10 leading-[1.1] tracking-tighter"
           >
             What People <span className="orange-text orange-glow">Say.</span>
           </motion.h2>
@@ -49,7 +49,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-              className="group flex flex-col min-w-[320px] md:min-w-[420px] max-w-[450px] shrink-0 snap-center p-12 rounded-[3.5rem] glass border-white/5 hover:border-orange-500/30 hover:bg-orange-500/[0.05] transition-all duration-700 relative overflow-hidden h-auto shadow-2xl hover:-translate-y-2 hover:shadow-[0_20px_50px_-15px_rgba(255,107,0,0.3)]"
+              className="group flex flex-col min-w-[280px] sm:min-w-[420px] max-w-[450px] shrink-0 snap-center p-8 sm:p-12 rounded-[3.5rem] glass border-white/5 hover:border-orange-500/30 hover:bg-orange-500/[0.05] transition-all duration-700 relative overflow-hidden h-auto shadow-2xl hover:-translate-y-2 hover:shadow-[0_20px_50px_-15px_rgba(255,107,0,0.3)]"
             >
               {/* Cinematic Quote Icon */}
               <div className="absolute top-10 right-12 text-orange-500/5 group-hover:text-orange-500/10 transition-all duration-700 -rotate-12 group-hover:scale-110">

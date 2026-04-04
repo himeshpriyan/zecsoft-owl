@@ -47,7 +47,7 @@ const CountUpNumber = ({ target, suffix }) => {
 
 const TrustStrip = () => {
   return (
-    <section id="trust" className="py-24 bg-black relative overflow-hidden">
+    <section id="trust" className="relative overflow-hidden">
       {/* Dynamic Border */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/10 to-transparent" />
@@ -60,9 +60,9 @@ const TrustStrip = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="text-center group flex flex-col items-center"
+              className="text-center group flex flex-col items-center py-6 sm:py-0"
             >
-              <h3 className="text-5xl md:text-7xl font-[1000] text-white mb-4 group-hover:text-orange-500 transition-colors drop-shadow-xl tracking-tighter">
+              <h3 className="text-5xl sm:text-6xl md:text-7xl font-[1000] text-white mb-4 group-hover:text-orange-500 transition-colors drop-shadow-xl tracking-tighter">
                 <CountUpNumber target={stat.value} suffix={stat.suffix} />
               </h3>
               <div className="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 group-hover:border-orange-500/30 group-hover:bg-orange-500/10 transition-all duration-300">

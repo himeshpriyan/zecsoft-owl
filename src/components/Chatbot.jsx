@@ -87,7 +87,7 @@ const Chatbot = () => {
         whileHover={{ scale: 1.1, y: -5 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-28 right-6 w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 text-orange-500 flex items-center justify-center shadow-2xl z-[1001] group overflow-hidden"
+        className="fixed bottom-4 right-4 sm:bottom-28 sm:right-6 w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 text-orange-500 flex items-center justify-center shadow-2xl z-[1001] group overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
         {isOpen ? <X size={24} /> : <MessageCircle size={24} className="group-hover:scale-110 transition-transform" />}
@@ -105,7 +105,7 @@ const Chatbot = () => {
             initial={{ opacity: 0, y: 100, scale: 0.8, transformOrigin: 'bottom right' }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            className="fixed bottom-0 md:bottom-48 right-0 md:right-6 w-full md:w-[400px] h-[75vh] md:h-[500px] glass rounded-t-3xl md:rounded-3xl overflow-hidden z-[1001] flex flex-col shadow-2xl border-t border-orange-500/20 md:border-orange-500/20"
+            className="fixed bottom-20 right-4 sm:bottom-48 sm:right-6 w-[calc(100%-2rem)] sm:w-[400px] h-[70vh] sm:h-[500px] glass rounded-3xl overflow-hidden z-[1001] flex flex-col shadow-2xl border border-orange-500/20"
           >
             {/* Header */}
             <div className="p-4 bg-orange-500 text-white flex items-center justify-between">

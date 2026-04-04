@@ -12,14 +12,15 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden bg-[#020203]">
+    <section className="relative h-screen min-h-[600px] md:min-h-[800px] flex items-center justify-center overflow-hidden bg-[#020203]">
       {/* Cinematic Owl Night Vision & Film Grain Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Watcher Eyes Overlay (Subtle Owl Motif) */}
         <div className="absolute top-[20%] left-[25%] w-[20%] h-[15%] rounded-[100%] bg-orange-600/10 blur-[60px] animate-pulse" />
         <div className="absolute top-[20%] right-[25%] w-[20%] h-[15%] rounded-[100%] bg-orange-600/10 blur-[60px] animate-pulse [animation-delay:1.5s]" />
         
-        {/* Deep ambient glow */}
+        {/* Deep ambient glow — enhanced */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[60%] rounded-full bg-orange-600/10 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[60%] h-[50%] rounded-full bg-orange-600/5 blur-[150px]" />
         
         <video
@@ -63,19 +64,19 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
         >
-          <h1 className="text-4xl md:text-7xl font-black mb-6 leading-[1.1] tracking-[-0.02em] text-white max-w-5xl mx-auto">
-            We Help Businesses Grow Faster with <br />
-            <span className="orange-text orange-glow">AI-Powered Digital Solutions</span>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[1.1] tracking-[-0.02em] text-white max-w-5xl mx-auto px-2">
+            We Build Websites &amp; Digital Solutions<br />
+            That <span className="orange-text orange-glow">Bring You More Customers</span>
           </h1>
         </motion.div>
 
         <motion.p 
-          className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 font-medium leading-relaxed opacity-90"
+          className="text-base md:text-lg lg:text-xl text-gray-400 max-w-2xl md:max-w-3xl mx-auto mb-10 font-medium leading-relaxed opacity-90 px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
         >
-          Generate leads, accelerate growth, and build powerful branding through elite digital strategies, intelligent automation, and cinematic media production.
+          From design to marketing, we help your business grow faster, attract more clients, and increase your online presence.
         </motion.p>
 
         <motion.div 
@@ -98,7 +99,7 @@ const Hero = () => {
             <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:border-orange-500 transition-colors duration-500 shadow-xl group-hover:shadow-[0_0_20px_rgba(255,107,0,0.3)]">
               <Play size={20} className="ml-1" fill="currentColor" />
             </div>
-            Start Your Project
+            Start Your Project Today
           </button>
         </motion.div>
 

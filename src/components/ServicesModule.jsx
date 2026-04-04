@@ -8,7 +8,7 @@ const ServicesModule = ({ interactive = false }) => {
   const [expandedCategory, setExpandedCategory] = useState(null);
 
   return (
-    <section id="services" className="py-24 bg-[#020203] relative overflow-hidden">
+    <section id="services" className="relative overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-600/[0.02] blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-600/[0.02] blur-[150px] rounded-full pointer-events-none" />
@@ -29,9 +29,10 @@ const ServicesModule = ({ interactive = false }) => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-black text-white leading-[0.95] tracking-tighter"
+            className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tighter"
           >
-            Complete <span className="text-orange-500">Service Coverage.</span>
+            Digital Solutions <br className="hidden sm:block" />
+            <span className="orange-text orange-glow">Made Simple.</span>
           </motion.h2>
           <motion.p
              initial={{ opacity: 0 }}
@@ -58,7 +59,7 @@ const ServicesModule = ({ interactive = false }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/5 hover:border-orange-500/40 hover:bg-white/[0.05] transition-all duration-500 group relative shadow-2xl h-full hover:-translate-y-2 hover:shadow-[0_20px_50px_-15px_rgba(255,107,0,0.4)]"
+                className="group glass rounded-[2.5rem] p-6 sm:p-10 border-white/5 hover:border-orange-500/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full active:scale-95 sm:active:scale-100 hover:shadow-[0_20px_50px_-15px_rgba(255,107,0,0.4)]"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.5rem]" />
                 

@@ -23,6 +23,10 @@
   --glass-hover: rgba(255, 107, 0, 0.05);
   --selection-bg: var(--orange);
   --selection-text: var(--white);
+  
+  /* Mobile Specific Spacing */
+  --mobile-section-py: 4rem;
+  --mobile-container-px: 1.25rem;
 }
 
 ::selection {
@@ -99,6 +103,50 @@ h1, h2, h3, h4, h5, h6 {
 .card-hover:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 40px 80px -20px rgba(255, 107, 0, 0.25);
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--mobile-container-px);
+  padding-left: var(--mobile-container-px);
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Base Responsive Section Spacing */
+section {
+  padding-top: var(--mobile-section-py);
+  padding-bottom: var(--mobile-section-py);
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
 
 .glass {

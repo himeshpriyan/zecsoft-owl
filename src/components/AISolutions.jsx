@@ -7,22 +7,22 @@ export default function AISolutions() {
     {
       icon: <Target size={24} />,
       title: 'Smart Recommendations',
-      description: 'Our digital funnels use AI to predict user intent and recommend the perfect products or services instantly.',
+      description: 'We use data and smart tools to understand what your customers need and help you reach them at the right time.',
     },
     {
       icon: <Zap size={24} />,
-      title: 'Workflow Automation',
-      description: 'We automate your lead capture and follow-ups, reducing manual work and ensuring zero leads are lost.',
+      title: 'Faster Delivery',
+      description: 'By using modern tools in our workflow, we complete projects faster without compromising on quality.',
     },
     {
       icon: <Bot size={24} />,
-      title: 'Faster Results',
-      description: 'Leveraging AI tools in our creative process means we deliver high-quality assets 3x faster than traditional agencies.',
+      title: 'Better Results',
+      description: 'Our technology-backed approach helps your business get more visibility, more engagement, and more customers.',
     }
   ];
 
   return (
-    <section className="py-24 bg-[#0d0d0d] relative overflow-hidden">
+    <section id="ai-solutions" className="relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-600/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -47,10 +47,10 @@ export default function AISolutions() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tighter"
+              className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-10 leading-[1.1] tracking-tighter"
             >
-              Smart <span className="text-orange-500">AI Solutions</span><br />
-              For Your Business
+              Smart Tools for <br />
+              <span className="orange-text orange-glow">Business Efficiency.</span>
             </motion.h2>
             
             <motion.p 
@@ -60,7 +60,7 @@ export default function AISolutions() {
               transition={{ delay: 0.2 }}
               className="text-gray-400 text-lg leading-relaxed mb-10"
             >
-              We use smart tools to speed up work and improve results. We help you connect with your audience faster using modern, efficient systems.
+              We use smart tools and modern technology to deliver faster and more effective results for your business.
             </motion.p>
             
             <motion.div 

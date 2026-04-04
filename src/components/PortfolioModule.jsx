@@ -5,34 +5,20 @@ import { Maximize2, Play, ArrowRight, ExternalLink, Sparkles, Filter } from 'luc
 import { useApp } from '../context/AppContext';
 
 const PortfolioModule = () => {
-  const [filter, setFilter] = useState('all');
   const [hoveredId, setHoveredId] = useState(null);
   const { setPortfolioModal } = useApp();
-
-  const categories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'wedding', label: 'Wedding' },
-    { id: 'corporate', label: 'Corporate' },
-    { id: 'product', label: 'Product' },
-    { id: 'social', label: 'Social' },
-    { id: 'event', label: 'Event' },
-    { id: 'web', label: 'Web' }
-  ];
-
-  const filteredProjects = filter === 'all' 
-    ? portfolio 
-    : portfolio.filter(p => p.category.toLowerCase() === filter);
+  const filteredProjects = portfolio;
 
   return (
-    <section id="portfolio" className="py-32 bg-black relative">
+    <section id="portfolio" className="relative">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 text-center md:text-left">
           <div>
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 mb-4"
+              className="flex items-center justify-center md:justify-start gap-2 mb-4"
             >
               <Sparkles size={16} className="text-orange-500" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange-400">Our Work</span>
@@ -41,33 +27,16 @@ const PortfolioModule = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-black text-white"
+              className="text-4xl sm:text-5xl md:text-6xl font-black text-white"
             >
               Recent <span className="text-orange-500">Projects</span>
             </motion.h2>
-          </div>
-
-          {/* Filter Bar */}
-          <div className="flex flex-wrap gap-2 bg-white/5 p-1.5 rounded-2xl border border-white/5 backdrop-blur-md">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setFilter(cat.id)}
-                className={`px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 ${
-                  filter === cat.id 
-                    ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/20' 
-                    : 'text-gray-500 hover:text-white'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
           </div>
         </div>
 
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
@@ -86,7 +55,7 @@ const PortfolioModule = () => {
                 {/* Image / "Video" Preview Simulation */}
                 <div className="absolute inset-0 z-0">
                   <motion.img
-                    src={project.image}
+                    src={project.thumbnail}
                     alt={project.title}
                     className="w-full h-full object-cover"
                     animate={{ scale: hoveredId === project.id ? 1.1 : 1 }}
@@ -104,7 +73,7 @@ const PortfolioModule = () => {
                 </div>
 
                 {/* Content Overlay */}
-                <div className="absolute inset-x-0 bottom-0 z-10 p-10 flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent">
+                <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-10 flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent">
                   <div className="flex items-start justify-between mb-5">
                     <motion.div 
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -125,7 +94,7 @@ const PortfolioModule = () => {
                     </motion.div>
                   </div>
 
-                  <h3 className="text-3xl font-black text-white mb-3 group-hover:text-orange-500 transition-all duration-500 tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 group-hover:text-orange-500 transition-all duration-500 tracking-tight">
                     {project.title}
                   </h3>
                   
@@ -160,13 +129,6 @@ const PortfolioModule = () => {
             ))}
           </AnimatePresence>
         </motion.div>
-
-        {/* View More Button */}
-        <div className="mt-16 text-center">
-          <button className="btn-outline flex items-center gap-3 mx-auto group">
-            View All Projects <ExternalLink size={18} className="group-hover:rotate-12 transition-transform" />
-          </button>
-        </div>
       </div>
     </section>
   );
