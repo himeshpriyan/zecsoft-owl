@@ -23,8 +23,8 @@ const About = () => {
             <div className="relative rounded-[3.5rem] overflow-hidden border border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.9)] glass p-3 group">
               <div className="relative rounded-[3rem] overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&q=90" 
-                  alt="Elite Creative Team"
+                  src="https://images.unsplash.com/photo-1497215842964-222b430dc094?q=90&w=1200&auto=format&fit=crop" 
+                  alt="Zecsoft Owl Creative Lab"
                   className="w-full h-[350px] sm:h-[500px] md:h-[700px] object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#020203] via-transparent to-transparent opacity-90" />
