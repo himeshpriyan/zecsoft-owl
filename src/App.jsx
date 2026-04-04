@@ -9,7 +9,6 @@ import Notification from './components/Notification';
 import Chatbot from './components/Chatbot';
 import PortfolioModal from './components/PortfolioModal';
 import ScrollToTop from './components/ScrollToTop';
-import CustomCursor from './components/CustomCursor';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -24,9 +23,6 @@ export default function App() {
     <AppProvider>
       <ScrollToTop />
       {/* Persistent UI */}
-      <div className="hidden lg:block">
-        <CustomCursor />
-      </div>
       <Navbar />
       <FloatingActionBar />
       <Chatbot />

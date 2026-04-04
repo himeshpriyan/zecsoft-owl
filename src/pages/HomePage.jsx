@@ -5,7 +5,6 @@ import ServicesModule from '../components/ServicesModule';
 import PortfolioModule from '../components/PortfolioModule';
 import WhyChooseUs from '../components/WhyChooseUs';
 import AISolutions from '../components/AISolutions';
-import TrustStrip from '../components/TrustStrip';
 import Testimonials from '../components/Testimonials';
 
 import Contact from '../components/Contact';
@@ -19,7 +18,6 @@ export default function HomePage() {
       <ServicesModule />
       <AISolutions />
       <PortfolioModule />
-      <TrustStrip />
       <Testimonials />
 
       <Contact />
