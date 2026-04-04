@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Sparkles, User, Bot, ArrowRight } from 'lucide-react';
-import { useApp } from '../context/AppContext';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +11,6 @@ const Chatbot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [leadStage, setLeadStage] = useState(0); // 0 = initial, 1 = capturing email, 2 = success
   const scrollRef = useRef(null);
-  const { setQuoteModal } = useApp();
 
   useEffect(() => {
     if (scrollRef.current) {

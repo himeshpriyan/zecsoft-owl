@@ -1,10 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, ArrowRight, Sparkles } from 'lucide-react';
-import { useApp } from '../context/AppContext';
 
 const Hero = () => {
-  const { setQuoteModal } = useApp();
 
   const scrollTo = (id) => {
     const element = document.querySelector(id);
@@ -87,7 +85,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.8, ease: [0.23, 1, 0.32, 1] }}
         >
           <button 
-            onClick={() => setQuoteModal(true)}
+            onClick={() => scrollTo('#contact')}
             className="btn-premium flex items-center gap-4 group px-10 py-5 text-[12px]"
           >
             Get Free Consultation <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />

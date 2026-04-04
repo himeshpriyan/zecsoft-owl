@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, MessageCircle, Rocket, Calendar, Plus, X, Share2 } from 'lucide-react';
-import { useApp } from '../context/AppContext';
+import { Phone, MessageCircle, Calendar, Plus, X } from 'lucide-react';
 
 export default function FloatingActionBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { setQuoteModal } = useApp();
+  const scrollRef = useRef(null);
 
   const scrollTo = (id) => {
     const el = document.querySelector(id);
@@ -27,15 +26,9 @@ export default function FloatingActionBar() {
       action: () => window.open('https://wa.me/919999999999?text=Hi! I want to enquire about your services.', '_blank'),
     },
     {
-      label: 'Get Quote',
-      icon: <Rocket size={20} />,
-      color: 'bg-orange-500',
-      action: () => { setQuoteModal(true); setIsOpen(false); },
-    },
-    {
-      label: 'Book Now',
+      label: 'Contact Us',
       icon: <Calendar size={20} />,
-      color: 'bg-violet-500',
+      color: 'bg-orange-500',
       action: () => scrollTo('#contact'),
     },
   ];

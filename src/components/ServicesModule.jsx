@@ -3,12 +3,9 @@ import { motion } from 'framer-motion';
 import { services } from '../data/mockData';
 import { Zap, Check, ArrowRight } from 'lucide-react';
 import ServiceDetailsPanel from './ServiceDetailsPanel';
-import { useApp } from '../context/AppContext';
-
 const ServicesModule = ({ interactive = false }) => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [expandedCategory, setExpandedCategory] = useState(null);
-  const { setQuoteModal } = useApp();
 
   return (
     <section id="services" className="py-24 bg-[#020203] relative overflow-hidden">
@@ -91,13 +88,7 @@ const ServicesModule = ({ interactive = false }) => {
                              <p className={`text-white font-[900] text-[14px] uppercase tracking-wider leading-tight transition-colors group-hover/item:text-orange-400`}>{item.title}</p>
                              {interactive && <ArrowRight size={14} className="text-orange-500 opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all" />}
                           </div>
-                          <p className={`text-gray-400 text-[12px] leading-relaxed transition-colors group-hover/item:text-gray-300 mb-4`}>{item.description}</p>
-                          <button 
-                            onClick={(e) => { e.stopPropagation(); setQuoteModal(true); }}
-                            className="bg-white/5 hover:bg-orange-500 text-[9px] text-white uppercase font-black tracking-[0.2em] px-4 py-2 rounded-lg transition-colors border border-white/10 hover:border-orange-500 shadow-xl flex items-center gap-2 group/btn"
-                          >
-                            Get Quote <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
-                          </button>
+                          <p className={`text-gray-400 text-[12px] leading-relaxed transition-colors group-hover/item:text-gray-300`}>{item.description}</p>
                         </div>
                       </div>
                       ))}
@@ -111,10 +102,10 @@ const ServicesModule = ({ interactive = false }) => {
 
         <div className="mt-24 flex justify-center">
             <button 
-              onClick={() => setQuoteModal(true)} 
+              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-premium flex items-center text-sm gap-4 px-12 py-5 shadow-[0_20px_50px_rgba(255,107,0,0.3)] hover:scale-105 transition-transform duration-300"
             >
-                DISCUSS YOUR REQUIREMENTS <ArrowRight size={20} />
+                CONTACT US <ArrowRight size={20} />
             </button>
         </div>
       </div>
