@@ -60,9 +60,7 @@ export default function AISolutions() {
               transition={{ delay: 0.2 }}
               className="text-gray-400 text-lg leading-relaxed mb-10"
             >
-              We integrate the latest Artificial Intelligence frameworks into your websites, 
-              marketing campaigns, and workflows. Drive better conversions with a system 
-              that learns and adapts to your customers.
+              We use smart tools to speed up work and improve results. We help you connect with your audience faster using modern, efficient systems.
             </motion.p>
             
             <motion.div 

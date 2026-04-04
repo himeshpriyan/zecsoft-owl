@@ -66,8 +66,8 @@ const Hero = () => {
           transition={{ duration: 1.2, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
         >
           <h1 className="text-4xl md:text-7xl font-black mb-6 leading-[1.1] tracking-[-0.02em] text-white max-w-5xl mx-auto">
-            We Help Businesses Grow with <br />
-            <span className="orange-text orange-glow">AI-Powered Digital</span> & Media Solutions
+            We Help Businesses Grow Faster with <br />
+            <span className="orange-text orange-glow">AI-Powered Digital Solutions</span>
           </h1>
         </motion.div>
 
@@ -125,7 +125,7 @@ const Hero = () => {
               <div className="flex text-orange-500 gap-0.5 mb-0.5">
                  {[...Array(5)].map((_, i) => <Sparkles key={i} size={10} className="fill-orange-500" />)}
               </div>
-              <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Trusted by 50+ Clients</p>
+              <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Trusted by growing businesses</p>
            </div>
         </motion.div>
       </div>

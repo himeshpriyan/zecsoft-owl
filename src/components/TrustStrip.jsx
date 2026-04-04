@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion';
 const stats = [
   { label: 'Projects Completed', value: 100, suffix: '+' },
   { label: 'Happy Clients', value: 50, suffix: '+' },
-  { label: 'Years Experience', value: 5, suffix: '+' },
+  { label: 'Fast Delivery & Quality Work', value: 100, suffix: '%' },
 ];
 
 const CountUpNumber = ({ target, suffix }) => {
