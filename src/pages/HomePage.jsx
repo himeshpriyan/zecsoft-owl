@@ -2,17 +2,27 @@ import React from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import ServicesModule from '../components/ServicesModule';
-import BuildYourProject from '../components/BuildYourProject';
+import PortfolioModule from '../components/PortfolioModule';
 import WhyChooseUs from '../components/WhyChooseUs';
+import AISolutions from '../components/AISolutions';
+import TrustStrip from '../components/TrustStrip';
+import Testimonials from '../components/Testimonials';
+import BuildYourProject from '../components/BuildYourProject';
+import Contact from '../components/Contact';
 
 export default function HomePage() {
   return (
     <main>
       <Hero />
       <About />
-      <ServicesModule />
-      <BuildYourProject />
       <WhyChooseUs />
+      <ServicesModule />
+      <AISolutions />
+      <PortfolioModule />
+      <TrustStrip />
+      <Testimonials />
+      <BuildYourProject />
+      <Contact />
     </main>
   );
 }

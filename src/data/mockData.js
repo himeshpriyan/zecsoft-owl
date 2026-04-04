@@ -74,31 +74,27 @@ export const services = [
 ];
 
 export const portfolio = [
-  { id: 1, title: 'Wedding Highlight Video', category: 'Wedding', thumbnail: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80', description: 'A beautiful video covering the entire wedding day from start to finish.', tags: ['Video Editing', 'Cinematography'] },
-  { id: 2, title: 'Startup Brand Promo', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80', description: 'A short promotional video created to introduce a new business to social media.', tags: ['Marketing', 'Promo Video'] },
-  { id: 3, title: 'Restaurant Food Shoot', category: 'Product', thumbnail: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80', description: 'High-quality photography of menu items for a local restaurant.', tags: ['Product Shoot', 'Photography'] },
-  { id: 4, title: 'NGO Awareness Campaign', category: 'Social', thumbnail: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80', description: 'A social media campaign designed to raise awareness for ocean cleaning.', tags: ['Social Media', 'Content Creation'] },
-  { id: 5, title: 'College Fest Coverage', category: 'Event', thumbnail: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80', description: 'Full day photography and video coverage of a college cultural festival.', tags: ['Event Coverage', 'Photography'] },
-  { id: 6, title: 'Clothing Brand Website', category: 'Web', thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', description: 'A fast, responsive e-commerce website built for a new clothing store.', tags: ['Web Development', 'UI/UX'] },
-  { id: 7, title: '25th Birthday Party Video', category: 'Event', thumbnail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', description: 'A fun highlight video of a birthday celebration with family and friends.', tags: ['Event Coverage', 'Video Editing'] },
-  { id: 8, title: 'Business Conference Shoot', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80', description: 'Professional recording of guest speakers at an annual business conference.', tags: ['Corporate', 'Cinematography'] },
+  { id: 1, title: 'Dental Clinic Website Redesign', category: 'Website Design', thumbnail: 'https://images.unsplash.com/photo-1540562947137-b1a92e105db0?w=800&q=80', description: 'Modern, fast-loading design that increased online appointment bookings by 55%.', tags: ['Web Development', 'UI/UX'] },
+  { id: 2, title: 'Corporate Promo For SaaS', category: 'Video Production', thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80', description: 'Engaging software overview video. Helped client increase landing page conversions by 40%.', tags: ['Video Editing', 'Cinematography'] },
+  { id: 3, title: 'E-Commerce Marketing Strategy', category: 'Marketing Campaign', thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', description: 'Full-scale ad management that boosted online store revenue by 2x in three months.', tags: ['Marketing', 'Ads'] },
+  { id: 4, title: 'Local Coffee Shop SEO', category: 'Marketing Campaign', thumbnail: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80', description: 'Targeted local SEO campaign driving a 150% increase in foot traffic.', tags: ['Social Media', 'Content Creation'] },
+  { id: 5, title: 'Real Estate Drone Tour', category: 'Video Production', thumbnail: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80', description: 'Cinematic property showcases helping realtors sell properties 30% faster.', tags: ['Event Coverage', 'Photography'] },
+  { id: 6, title: 'Fintech App Landing Page', category: 'Website Design', thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80', description: 'Sleek, high-converting one-page site generating 500+ waitlist signups in week one.', tags: ['Web Design', 'UI/UX'] }
 ];
 
 export const testimonials = [
-  { id: 1, name: 'Ananya Malhotra', role: 'Elite Client', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ananya', rating: 5, review: 'Absolutely redefined my perception of visual storytelling. The Eternal Wedding film is more than a video; it\'s a piece of art that breathes life into our every memory.', location: 'Delhi' },
-  { id: 2, name: 'Siddharth Mehta', role: 'CEO, X-Orbit Ventures', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Siddharth', rating: 5, review: 'The Brand Genesis film was a pivotal moment for our unicorn launch. The visual precision and narrative depth Owl Creations brought to the table was world-class.', location: 'Bangalore' },
-  { id: 3, name: 'Elena Rodriguez', role: 'Global Art Director', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Elena', rating: 5, review: 'Their architectural look for our latest product launch was phenomenal. The macro-cinematography was exquisite, capturing details we didn\'t even know existed.', location: 'London' },
-  { id: 4, name: 'Rohan Deshmukh', role: 'Festival Director', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rohan', rating: 5, review: 'Covering a 20k attendees festival with five 4K cameras and delivering a masterpiece after-movie in 48 hours is unheard of. A true technical powerhouse.', location: 'Mumbai' },
-  { id: 5, name: 'Isabella Chen', role: 'Luxury Brand Manager', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Isabella', rating: 5, review: 'The Aura Luxury Interface is perfect. It\'s fast, beautiful, and the neuromorphic UX has already increased our conversion rates by 65%. Highly recommended!', location: 'Singapore' },
+  { id: 1, name: 'Arjun M.', role: 'Startup Founder', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arjun', rating: 5, review: 'Great service and quick delivery. The website they built increased our daily leads by 40%. Highly recommended!', location: 'Delhi' },
+  { id: 2, name: 'Samantha P.', role: 'Marketing Director', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sam', rating: 5, review: 'Fast, professional, and affordable. The promo video captured our product perfectly and drove massive engagement.', location: 'Bangalore' },
+  { id: 3, name: 'Ravi Chopra', role: 'E-commerce Owner', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ravi', rating: 5, review: 'We saw real results within weeks. Our ad campaigns have never performed this well. A truly professional team!', location: 'London' },
+  { id: 4, name: 'Priya K.', role: 'Agency Lead', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Priya', rating: 5, review: 'They delivered our landing page ahead of schedule, and the UI is absolutely premium. Worth every penny.', location: 'Mumbai' },
+  { id: 5, name: 'John Doe', role: 'Business Owner', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=JohnD', rating: 5, review: 'Incredible value for money. Their smart AI strategies completely automated our lead funnel.', location: 'Singapore' },
 ];
 
 export const whyChooseUs = [
-  { icon: '🎬', title: 'High-Quality Equipment', description: 'We use professional cameras and top-tier software to ensure your videos and designs look stunning.', highlight: 'Top Gear' },
-  { icon: '⚡', title: 'Fast Delivery', description: 'We work quickly and efficiently. You can expect to see the first draft of your project in no time.', highlight: 'Quick Turnaround' },
-  { icon: '💡', title: 'Creative Storytelling', description: 'We don\'t just take pictures or make posts; we tell your brand\'s story in a way people love.', highlight: 'Great Ideas' },
-  { icon: '💰', title: 'Value for Money', description: 'We offer great quality services at fair prices. Every rupee you spend helps grow your business.', highlight: 'Great Value' },
-  { icon: '🏆', title: '100% Quality Assured', description: 'We care about your success and treat every project like it\'s our own. We guarantee you\'ll be happy.', highlight: 'Top Quality' },
-  { icon: '🤝', title: 'Always Here for You', description: 'We are friendly and always available to answer your questions and support you whenever you need us.', highlight: 'Full Support' },
+  { icon: '⚡', title: 'Fast Delivery', description: 'We launch campaigns and complete projects ahead of schedule, letting you see ROI faster.', highlight: 'Quick Turnaround' },
+  { icon: '💰', title: 'Affordable Pricing', description: 'Premium quality work designed to fit scalable budgets. Maximum impact without the insane agency fees.', highlight: 'Great Value' },
+  { icon: '👔', title: 'Professional Team', description: 'Work directly with industry veterans who understand exactly how to position your brand for growth.', highlight: 'Experts' },
+  { icon: '📈', title: 'Real Results', description: 'We don’t just deliver beautiful designs; we engineer assets strictly optimized to convert visitors into clients.', highlight: 'High ROI' }
 ];
 
 export const serviceCategories = {

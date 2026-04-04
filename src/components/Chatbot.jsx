@@ -6,10 +6,11 @@ import { useApp } from '../context/AppContext';
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { id: 1, type: 'bot', text: "Hello! I'm your Owl Assistant. How can I help you create something extraordinary today?", timestamp: new Date() }
+    { id: 1, type: 'bot', text: "Hi! Looking for a website or marketing service?", options: ["Website Development", "Digital Marketing", "Video Production"], timestamp: new Date() }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [leadStage, setLeadStage] = useState(0); // 0 = initial, 1 = capturing email, 2 = success
   const scrollRef = useRef(null);
   const { setQuoteModal } = useApp();
 
@@ -51,24 +52,24 @@ const Chatbot = () => {
     setIsTyping(true);
 
     setTimeout(() => {
-      let botResponse = responses.default;
-      const lowerText = text.toLowerCase();
+      let botText = "";
+      let newStage = leadStage;
 
-      if (lowerText.includes('video') || lowerText.includes('film') || lowerText.includes('edit')) {
-        botResponse = responses.video;
-      } else if (lowerText.includes('marketing') || lowerText.includes('social') || lowerText.includes('seo')) {
-        botResponse = responses.marketing;
-      } else if (lowerText.includes('price') || lowerText.includes('cost') || lowerText.includes('pricing') || lowerText.includes('quote')) {
-        botResponse = responses.pricing;
-      } else if (lowerText.includes('web') || lowerText.includes('site') || lowerText.includes('design')) {
-        botResponse = responses.web;
+      if (leadStage === 0) {
+        botText = "Great choice! To help us prepare a custom strategy or quote, could you provide your Name and Contact Email?";
+        newStage = 1;
+      } else if (leadStage === 1) {
+        botText = "Thanks! We've captured your details. Our strategy team will reach out to you within the next 24 hours.";
+        newStage = 2;
+      } else {
+        botText = "If you have any other questions, feel free to ask or browse our portfolio!";
       }
 
+      setLeadStage(newStage);
       setMessages(prev => [...prev, {
           id: Date.now() + 1,
           type: 'bot',
-          text: botResponse.text,
-          options: botResponse.options,
+          text: botText,
           timestamp: new Date()
       }]);
       setIsTyping(false);
@@ -76,15 +77,7 @@ const Chatbot = () => {
   };
 
   const handleOptionClick = (option) => {
-    if (option === "Get Quote" || option === "Open Calculator" || option === "Calculate Quote") {
-      setQuoteModal(true);
-      setMessages(prev => [...prev, { id: Date.now(), type: 'user', text: option, timestamp: new Date() }]);
-      setTimeout(() => {
-        setMessages(prev => [...prev, { id: Date.now() + 1, type: 'bot', text: "Opening the Quote Calculator for you now! Anything else I can help with?", timestamp: new Date() }]);
-      }, 1000);
-    } else {
-      handleSend(option);
-    }
+    handleSend(option);
   };
 
   return (
@@ -114,7 +107,7 @@ const Chatbot = () => {
             initial={{ opacity: 0, y: 100, scale: 0.8, transformOrigin: 'bottom right' }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            className="fixed bottom-48 right-6 w-[350px] md:w-[400px] h-[500px] glass rounded-3xl overflow-hidden z-[1001] flex flex-col shadow-2xl border-orange-500/20"
+            className="fixed bottom-0 md:bottom-48 right-0 md:right-6 w-full md:w-[400px] h-[75vh] md:h-[500px] glass rounded-t-3xl md:rounded-3xl overflow-hidden z-[1001] flex flex-col shadow-2xl border-t border-orange-500/20 md:border-orange-500/20"
           >
             {/* Header */}
             <div className="p-4 bg-orange-500 text-white flex items-center justify-between">

@@ -61,45 +61,43 @@ const ServicesModule = ({ interactive = false }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/5 hover:border-orange-500/30 transition-all duration-500 group relative overflow-hidden shadow-2xl"
+                className="flex flex-col p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/5 hover:border-orange-500/40 hover:bg-white/[0.05] transition-all duration-500 group relative shadow-2xl h-full hover:-translate-y-2 hover:shadow-[0_20px_50px_-15px_rgba(255,107,0,0.4)]"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.5rem]" />
                 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div 
-                    className="flex items-center justify-between cursor-pointer md:cursor-auto group/header"
-                    onClick={() => setExpandedCategory(expandedCategory === cat.id ? null : cat.id)}
-                  >
-                    <div className="flex items-center gap-5">
-                      <div className="w-16 h-16 shrink-0 rounded-2xl bg-white/5 text-3xl flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all duration-500 shadow-xl group-hover:scale-110">
-                        {mainIcon}
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-[1000] text-white uppercase tracking-tighter group-hover:text-orange-500 transition-colors">
-                        {cleanCategoryName}
-                      </h3>
+                  <div className="flex items-center gap-5 mb-8">
+                    <div className="w-16 h-16 shrink-0 rounded-2xl bg-white/5 text-3xl flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all duration-500 shadow-xl group-hover:scale-110">
+                      {mainIcon}
                     </div>
-                    <div className={`md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 text-gray-400 transition-all duration-300 ${expandedCategory === cat.id ? 'rotate-90 bg-orange-500/20 text-orange-500' : ''}`}>
-                       <ArrowRight size={18} />
-                    </div>
+                    <h3 className="text-xl md:text-2xl font-[1000] text-white uppercase tracking-tighter group-hover:text-orange-500 transition-colors">
+                      {cleanCategoryName}
+                    </h3>
                   </div>
 
-                  <div className={`flex flex-col transition-all duration-500 overflow-hidden md:max-h-[2000px] md:opacity-100 md:mt-10 md:flex-1 ${expandedCategory === cat.id ? 'max-h-[2000px] opacity-100 mt-8 flex-1' : 'max-h-0 opacity-0 mt-0 flex-none'}`}>
-                    <div className="space-y-5">
+                  <div className="flex flex-col flex-1">
+                    <div className="space-y-4">
                       {cat.items.map((item) => (
                       <div 
                         key={item.id} 
-                        className={`flex items-start gap-4 group/item p-3 -mx-3 rounded-2xl relative border border-transparent transition-all duration-300 ${interactive ? 'cursor-pointer hover:bg-white/[0.04] hover:shadow-lg hover:border-white/5' : ''}`}
+                        className={`flex items-start gap-4 p-5 rounded-2xl relative border border-white/5 bg-black/40 hover:bg-orange-500/10 hover:border-orange-500/40 hover:scale-[1.02] hover:shadow-[0_10px_30px_-10px_rgba(255,107,0,0.3)] transition-all duration-300 group/item ${interactive ? 'cursor-pointer' : ''}`}
                         onClick={() => interactive && setSelectedItem(item)}
                       >
-                        <div className={`mt-1 w-6 h-6 rounded-md bg-white/5 flex items-center justify-center shrink-0 transition-colors ${interactive ? 'group-hover/item:bg-orange-500/20 group-hover/item:text-orange-500' : ''}`}>
-                           <span className="text-[10px]">{interactive ? '✨' : '✔'}</span>
+                        <div className={`mt-0.5 w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-white/5 text-gray-400 group-hover/item:bg-orange-500/20 group-hover/item:text-orange-500 group-hover/item:scale-110`}>
+                           <span className="text-xs">{item.icon || '✨'}</span>
                         </div>
                         <div className="flex-1">
-                          <div className="flex justify-between items-center mb-1.5">
-                             <p className={`text-white font-[900] text-[13px] uppercase tracking-wider leading-tight transition-colors ${interactive ? 'group-hover/item:text-orange-400' : ''}`}>{item.title}</p>
-                             {interactive && <ArrowRight size={12} className="text-gray-600 opacity-0 group-hover/item:opacity-100 group-hover/item:text-orange-500 group-hover/item:translate-x-1 transition-all" />}
+                          <div className="flex justify-between items-center mb-2">
+                             <p className={`text-white font-[900] text-[14px] uppercase tracking-wider leading-tight transition-colors group-hover/item:text-orange-400`}>{item.title}</p>
+                             {interactive && <ArrowRight size={14} className="text-orange-500 opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-1 transition-all" />}
                           </div>
-                          <p className={`text-gray-500 text-[11px] leading-relaxed transition-colors ${interactive ? 'group-hover/item:text-gray-400' : ''}`}>{item.description}</p>
+                          <p className={`text-gray-400 text-[12px] leading-relaxed transition-colors group-hover/item:text-gray-300 mb-4`}>{item.description}</p>
+                          <button 
+                            onClick={(e) => { e.stopPropagation(); setQuoteModal(true); }}
+                            className="bg-white/5 hover:bg-orange-500 text-[9px] text-white uppercase font-black tracking-[0.2em] px-4 py-2 rounded-lg transition-colors border border-white/10 hover:border-orange-500 shadow-xl flex items-center gap-2 group/btn"
+                          >
+                            Get Quote <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
+                          </button>
                         </div>
                       </div>
                       ))}

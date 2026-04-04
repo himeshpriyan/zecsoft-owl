@@ -65,44 +65,68 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
         >
-          <h1 className="text-7xl md:text-[11rem] font-black mb-8 leading-[0.85] tracking-[-0.05em] text-white">
-            THE OWL<br />
-            <span className="orange-text orange-glow">CREATIONS</span>
+          <h1 className="text-4xl md:text-7xl font-black mb-6 leading-[1.1] tracking-[-0.02em] text-white max-w-5xl mx-auto">
+            We Help Businesses Grow with <br />
+            <span className="orange-text orange-glow">AI-Powered Digital</span> & Media Solutions
           </h1>
         </motion.div>
 
         <motion.p 
-          className="text-lg md:text-2xl text-gray-400 max-w-2xl mx-auto mb-16 font-medium leading-relaxed opacity-80"
+          className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 font-medium leading-relaxed opacity-90"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
         >
-          We don't just capture moments; we architect cinematic legacies through 
-          unmatched focus and elite digital storytelling.
+          Generate leads, accelerate growth, and build powerful branding through elite digital strategies, intelligent automation, and cinematic media production.
         </motion.p>
 
         <motion.div 
-          className="flex flex-col sm:flex-row items-center justify-center gap-8"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.8, ease: [0.23, 1, 0.32, 1] }}
         >
           <button 
             onClick={() => setQuoteModal(true)}
-            className="btn-premium flex items-center gap-4 group"
+            className="btn-premium flex items-center gap-4 group px-10 py-5 text-[12px]"
           >
-            Open Aperture <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+            Get Free Consultation <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
           </button>
           
           <button 
             onClick={() => scrollTo('#portfolio')}
-            className="group flex items-center gap-4 text-white font-black uppercase tracking-widest text-xs h-full py-4 relative z-10"
+            className="group flex items-center gap-4 text-white font-black uppercase tracking-widest text-xs h-full py-4 relative z-10 hover:text-orange-500 transition-colors"
           >
-            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500">
-              <Play size={20} fill="currentColor" />
+            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:border-orange-500 transition-colors duration-500 shadow-xl group-hover:shadow-[0_0_20px_rgba(255,107,0,0.3)]">
+              <Play size={20} className="ml-1" fill="currentColor" />
             </div>
-            Review Footage
+            Start Your Project
           </button>
+        </motion.div>
+
+        {/* Client Trust Badge */}
+        <motion.div
+           initial={{ opacity: 0, y: 10 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.5, delay: 1.2 }}
+           className="flex items-center justify-center gap-4 hidden sm:flex"
+        >
+           <div className="flex -space-x-3">
+              {[...Array(4)].map((_, i) => (
+                 <div key={i} className={`w-8 h-8 rounded-full border-2 border-[#020203] bg-gray-600/30 overflow-hidden`}>
+                    <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=user${i}&backgroundColor=transparent`} alt="Client" className="w-full h-full object-cover" />
+                 </div>
+              ))}
+              <div className="w-8 h-8 rounded-full border-2 border-[#020203] bg-orange-500 flex items-center justify-center text-[10px] font-bold text-white z-10">
+                +46
+              </div>
+           </div>
+           <div className="text-left">
+              <div className="flex text-orange-500 gap-0.5 mb-0.5">
+                 {[...Array(5)].map((_, i) => <Sparkles key={i} size={10} className="fill-orange-500" />)}
+              </div>
+              <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Trusted by 50+ Clients</p>
+           </div>
         </motion.div>
       </div>
 

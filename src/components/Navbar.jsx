@@ -105,7 +105,7 @@ const Navbar = () => {
                   <Link
                     to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block text-xl font-black text-left transition-colors uppercase tracking-widest ${
+                    className={`block py-3 text-2xl font-[900] text-left transition-colors uppercase tracking-[0.15em] ${
                       location.pathname === link.href ? 'text-orange-500' : 'text-white hover:text-orange-500'
                     }`}
                   >

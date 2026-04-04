@@ -106,7 +106,7 @@ const Contact = () => {
                       <CheckCircle size={48} className="animate-bounce" />
                     </div>
                     <h3 className="text-4xl font-[1000] text-white mb-6 uppercase tracking-tighter">Transmission Complete.</h3>
-                    <p className="text-gray-500 text-[10px] uppercase tracking-[0.4em] font-black leading-relaxed px-6">Our Elite Strategist will initiate contact <br /> within the next 4-hour window.</p>
+                    <p className="text-gray-500 text-[10px] uppercase tracking-[0.4em] font-black leading-relaxed px-6">We will contact you <br /> within 24 hours.</p>
                     <button
                       onClick={() => setFormState('idle')}
                       className="mt-12 text-orange-500 font-black uppercase text-[10px] tracking-[0.4em] hover:text-white transition-colors flex items-center gap-2 mx-auto decoration-orange-500 underline underline-offset-8"
@@ -137,6 +137,19 @@ const Contact = () => {
                         placeholder="Enter email address"
                         className="w-full bg-transparent border-b-2 border-white/10 px-0 py-4 text-white placeholder:text-gray-800 outline-none focus:border-orange-500 transition-all font-black text-lg tracking-tight"
                       />
+                    </div>
+                    <div className="space-y-3 group/field">
+                      <label className="text-[9px] font-black uppercase tracking-[0.4em] text-gray-600 px-1 group-focus-within/field:text-orange-500 transition-colors">Service Needed</label>
+                      <select
+                        required
+                        className="w-full bg-transparent border-b-2 border-white/10 px-0 py-4 text-white outline-none focus:border-orange-500 transition-all font-black text-[16px] tracking-tight appearance-none cursor-pointer"
+                      >
+                        <option value="" disabled selected className="bg-black text-gray-500">Select a service...</option>
+                        <option value="web" className="bg-black">Website Development</option>
+                        <option value="marketing" className="bg-black">Digital Marketing</option>
+                        <option value="video" className="bg-black">Video Production</option>
+                        <option value="other" className="bg-black">Other Services</option>
+                      </select>
                     </div>
                     <div className="space-y-3 group/field">
                       <label className="text-[9px] font-black uppercase tracking-[0.4em] text-gray-600 px-1 group-focus-within/field:text-orange-500 transition-colors">Strategic Objective</label>

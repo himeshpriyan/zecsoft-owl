@@ -78,7 +78,7 @@ const PortfolioModule = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group relative h-[400px] rounded-[2rem] overflow-hidden cursor-pointer glass border-white/5"
+                className="group relative aspect-square md:aspect-auto md:h-[450px] rounded-[2.5rem] overflow-hidden cursor-pointer glass border-white/5 shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(255,107,0,0.4)] hover:-translate-y-2 transition-all duration-500"
                 onMouseEnter={() => setHoveredId(project.id)}
                 onMouseLeave={() => setHoveredId(null)}
                 onClick={() => setPortfolioModal(project)}

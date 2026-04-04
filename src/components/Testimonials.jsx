@@ -41,7 +41,7 @@ const Testimonials = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-12 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide items-stretch">
           {testimonials.map((test, i) => (
             <motion.div
               key={test.id}
@@ -49,7 +49,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-              className="group p-12 rounded-[3.5rem] glass border-white/5 hover:border-orange-500/20 hover:bg-orange-500/[0.03] transition-all duration-700 relative overflow-hidden"
+              className="group flex flex-col min-w-[320px] md:min-w-[420px] max-w-[450px] shrink-0 snap-center p-12 rounded-[3.5rem] glass border-white/5 hover:border-orange-500/30 hover:bg-orange-500/[0.05] transition-all duration-700 relative overflow-hidden h-auto shadow-2xl hover:-translate-y-2 hover:shadow-[0_20px_50px_-15px_rgba(255,107,0,0.3)]"
             >
               {/* Cinematic Quote Icon */}
               <div className="absolute top-10 right-12 text-orange-500/5 group-hover:text-orange-500/10 transition-all duration-700 -rotate-12 group-hover:scale-110">
@@ -63,13 +63,13 @@ const Testimonials = () => {
                 ))}
               </div>
 
-              <p className="text-xl text-white font-medium leading-[1.6] mb-12 italic relative z-10 tracking-tight group-hover:text-white transition-colors duration-500">
+              <p className="text-xl text-white font-medium leading-[1.6] mb-12 italic relative z-10 tracking-tight group-hover:text-white transition-colors duration-500 flex-1">
                 "{test.review}"
               </p>
 
-              <div className="flex items-center gap-6 border-t border-white/5 pt-10">
+              <div className="flex items-center gap-6 border-t border-white/5 pt-10 mt-auto">
                 <div className="relative">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-orange-500/30 group-hover:border-orange-500 transition-colors duration-500 p-1">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-orange-500/30 group-hover:border-orange-500 transition-colors duration-500 p-1 bg-black">
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-500/10 to-orange-500/40 flex items-center justify-center text-white overflow-hidden shadow-xl">
                        <img src={test.avatar} alt={test.name} className="w-full h-full object-cover" />
                     </div>

@@ -33,8 +33,8 @@ export default function BuildYourProject() {
       <div className="max-w-4xl mx-auto px-4 md:px-6">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
           <span className="text-orange-400 font-black uppercase tracking-widest text-[10px]">🏗️ Get a Custom Estimate</span>
-          <h2 className="section-heading text-white mt-4 text-3xl md:text-5xl font-black">Build Your <span className="text-orange-500">Project</span></h2>
-          <p className="text-gray-400 mt-4 text-base md:text-lg">Select the specific services you need below to help us tailor your quote.</p>
+          <h2 className="section-heading text-white mt-4 text-3xl md:text-5xl font-black">Let’s Build Something <br className="md:hidden"/><span className="text-orange-500">Amazing Together 🚀</span></h2>
+          <p className="text-gray-400 mt-4 text-base md:text-lg">Get a free consultation and grow your business today.</p>
         </motion.div>
 
         <div className="glass rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden">
@@ -156,7 +156,7 @@ export default function BuildYourProject() {
 
             <div className="pt-2">
               <button type="submit" className="btn-premium w-full justify-center py-5 shadow-2xl">
-                SUBMIT PROJECT REQUEST
+                GET STARTED NOW
               </button>
             </div>
             
