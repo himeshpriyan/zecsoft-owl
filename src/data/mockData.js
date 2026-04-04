@@ -74,7 +74,7 @@ export const services = [
 ];
 
 export const portfolio = [
-  { id: 1, title: 'Business Website for Local Brand', category: 'Web Design', thumbnail: 'https://images.unsplash.com/photo-1540562947137-b1a92e105db0?w=800&q=80', description: 'Designed a clean, fast website that increased online engagement by 40%.', tags: ['Web Design', 'UI/UX'] },
+  { id: 1, title: 'Business Website for Local Brand', category: 'Web Design', thumbnail: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80', description: 'Designed a clean, fast website that increased online engagement by 40%.', tags: ['Web Design', 'UI/UX'] },
   { id: 2, title: 'Product Video Ad for E-Commerce', category: 'Video Editing', thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80', description: 'Produced a short video ad that improved customer reach and product visibility.', tags: ['Video Editing', 'Cinematography'] },
   { id: 3, title: 'Social Media Marketing Campaign', category: 'Marketing', thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', description: 'Ran targeted campaigns that brought in more customers and increased brand awareness.', tags: ['Marketing', 'Ads'] }
 ];
