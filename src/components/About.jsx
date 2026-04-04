@@ -127,13 +127,6 @@ const About = () => {
                ))}
             </div>
 
-            <motion.button 
-               whileHover={{ scale: 1.05 }}
-               whileTap={{ scale: 0.95 }}
-               className="btn-premium w-fit group flex items-center gap-4 py-5"
-            >
-               Our Cinematic Vision <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform" />
-            </motion.button>
           </div>
         </div>
       </div>
