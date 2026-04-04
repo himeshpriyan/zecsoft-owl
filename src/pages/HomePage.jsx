@@ -7,7 +7,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import AISolutions from '../components/AISolutions';
 import TrustStrip from '../components/TrustStrip';
 import Testimonials from '../components/Testimonials';
-import BuildYourProject from '../components/BuildYourProject';
+
 import Contact from '../components/Contact';
 
 export default function HomePage() {
@@ -21,7 +21,7 @@ export default function HomePage() {
       <PortfolioModule />
       <TrustStrip />
       <Testimonials />
-      <BuildYourProject />
+
       <Contact />
     </main>
   );
