@@ -83,15 +83,6 @@ const PortfolioModule = () => {
                       <span className="text-[9px] font-black text-orange-500 uppercase tracking-[0.2em]">{project.category}</span>
                     </motion.div>
                     
-                    <motion.div
-                      animate={{ 
-                        scale: hoveredId === project.id ? 1.1 : 1,
-                        opacity: hoveredId === project.id ? 1 : 0.8 
-                      }}
-                      className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-2xl flex items-center justify-center text-white shadow-2xl transition-all duration-500 group-hover:bg-orange-500 group-hover:border-orange-500"
-                    >
-                      <Play size={20} fill="currentColor" />
-                    </motion.div>
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 group-hover:text-orange-500 transition-all duration-500 tracking-tight">
